@@ -17,6 +17,33 @@
         document.querySelector('.mobile-menu')?.classList.toggle('active');
     }
 
+    /* ===== Project toggle functionality ===== */
+    function toggleProject(projectElement) {
+        // Přepnout třídu 'expanded' na kliknutém projektu
+        projectElement.classList.toggle('expanded');
+        
+        // Najít obsah projektu
+        const content = projectElement.querySelector('.project-content');
+        if (!content) return;
+        
+        // Animace otevření/zavření
+        if (projectElement.classList.contains('expanded')) {
+            // Otevřít projekt
+            content.style.maxHeight = content.scrollHeight + 'px';
+            
+            // Smooth scroll k projektu po otevření
+            setTimeout(() => {
+                projectElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        } else {
+            // Zavřít projekt
+            content.style.maxHeight = '0px';
+        }
+    }
+
     /* ===== Scroll reveal ===== */
     function observeElements() {
         const sections = document.querySelectorAll('.section');
@@ -26,7 +53,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);          // už nepozorovat
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
@@ -78,11 +105,42 @@
                 return;
             }
 
-            /* Tady by normálně šel fetch/axios požadavek. */
             console.log('Form data:', data);
-
             showNotification('Zpráva byla odeslána! Odpovím vám co nejdříve.', 'success');
             form.reset();
+        });
+    }
+
+    /* ===== Project links handling ===== */
+    function handleProjectLinks() {
+        // Přidat event listenery pro všechny odkazy v projektech
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', e => {
+                e.stopPropagation(); // Zabránit zavření projektu při kliknutí na odkaz
+                
+                // Pokud je href="#", zobrazit notifikaci
+                if (link.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    const linkText = link.textContent.trim();
+                    showNotification(`${linkText} bude brzy k dispozici!`, 'info');
+                }
+            });
+        });
+    }
+
+    /* ===== Keyboard accessibility for projects ===== */
+    function handleProjectKeyboard() {
+        document.querySelectorAll('.expandable-project').forEach(project => {
+            // Přidat tabindex pro přístupnost
+            project.setAttribute('tabindex', '0');
+            
+            // Přidat keyboard support
+            project.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleProject(project);
+                }
+            });
         });
     }
 
@@ -116,13 +174,11 @@
 
         document.body.appendChild(n);
 
-        /* animace – první frame */
         requestAnimationFrame(() => {
             n.style.opacity = '1';
             n.style.transform = 'translateY(0)';
         });
 
-        /* auto-dismiss */
         setTimeout(() => {
             n.style.opacity = '0';
             n.style.transform = 'translateY(-10px)';
@@ -130,15 +186,24 @@
         }, duration);
     }
 
+    /* ===== Global toggle function for HTML onclick ===== */
+    window.toggleProject = toggleProject;
+
     /* ===== Init ===== */
     document.addEventListener('DOMContentLoaded', () => {
         observeElements();
         handleContactForm();
+        handleProjectLinks();
+        handleProjectKeyboard();
 
         document.querySelector('.mobile-menu-btn')
             ?.addEventListener('click', toggleMenu);
 
-        handleScroll();                               // init
+        handleScroll();
         window.addEventListener('scroll', throttle(handleScroll, 50));
+
+        // Debug: Zkontrolovat, jestli jsou projekty nalezeny
+        const projects = document.querySelectorAll('.expandable-project');
+        console.log(`Nalezeno ${projects.length} rozklikávacích projektů`);
     });
 })();
