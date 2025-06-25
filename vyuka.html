@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výuka - VizM0r</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">VizM0r</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="projekty.html">Projekty</a></li>
+                <li><a href="vyuka.html">Výuka</a></li>
+                <li><a href="napady.html">Nápady</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
+    <main class="content-page">
+        <div class="container">
+            <h1>Základy elektrotechniky</h1>
+            <p class="text-center mb-2">Naučte se základy elektrotechniky a elektroniky prostřednictvím praktických návodů a teoretických vysvětlení.</p>
+
+            <section>
+                <h2 class="section-title">Základní pojmy</h2>
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h3>Elektrický proud</h3>
+                        <p>Základní vysvětlení elektrického proudu, napětí a odporu. Ohmův zákon a jeho praktické využití.</p>
+                        <span class="difficulty difficulty-medium">Pokročilý</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Střídavý proud</h3>
+                        <p>AC obvody, fázory, impedance a výpočty v střídavých obvodech.</p>
+                        <span class="difficulty difficulty-medium">Pokročilý</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Elektronické součástky</h2>
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h3>Rezistory</h3>
+                        <p>Typy rezistorů, barevné kódy, výkonové ztráty a praktické použití.</p>
+                        <span class="difficulty difficulty-easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Diody a LED</h3>
+                        <p>Princip fungování diod, typy diod, LED diody a jejich zapojení.</p>
+                        <span class="difficulty difficulty-easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Tranzistory</h3>
+                        <p>Bipolární a unipolární tranzistory, základní zapojení a praktické využití.</p>
+                        <span class="difficulty difficulty-medium">Pokročilý</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Integrované obvody</h3>
+                        <p>Operační zesilovače, komparátory, časovače (555) a jejich aplikace.</p>
+                        <span class="difficulty difficulty-hard">Expert</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Praktické návody</h2>
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h3>Jak číst schéma</h3>
+                        <p>Základní symboly, čtení elektronických schémat a jejich interpretace.</p>
+                        <span class="difficulty difficulty-easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Pájení pro začátečníky</h3>
+                        <p>Základy pájení, výběr nástrojů, techniky a časté chyby.</p>
+                        <span class="difficulty difficulty-easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Měření multimetrem</h3>
+                        <p>Jak používat multimetr, měření napětí, proudu, odporu a kontinuity.</p>
+                        <span class="difficulty difficulty-easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Návrh DPS</h3>
+                        <p>Základy návrhu desek plošných spojů, software a výrobní proces.</p>
+                        <span class="difficulty difficulty-hard">Expert</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Arduino a mikrokontroléry</h2>
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h3>Úvod do Arduina</h3>
+                        <p>Základy platformy Arduino, IDE, první projekt - blikající LED.</p>
+                        <span class="difficulty difficulty-easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Senzory a Arduino</h3>
+                        <p>Připojení různých senzorů (teplota, světlo, pohyb) k Arduino desce.</p>
+                        <span class="difficulty difficulty-medium">Pokročilý</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Komunikační protokoly</h3>
+                        <p>I2C, SPI, UART - jak fungují a jak je používat s mikrokontroléry.</p>
+                        <span class="difficulty difficulty-hard">Expert</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>ESP32 a WiFi</h3>
+                        <p>Programování ESP32, WiFi připojení, webový server a IoT aplikace.</p>
+                        <span class="difficulty difficulty-medium">Pokročilý</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Bezpečnost</h2>
+                <div class="card">
+                    <h3>⚠️ Důležité bezpečnostní pokyny</h3>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Nikdy nepracujte s elektřinou mokrýma rukama</li>
+                        <li>Před prací na obvodu vždy odpojte napájení</li>
+                        <li>Používejte správné ochranné pomůcky</li>
+                        <li>Pozor na vysoká napětí - nad 50V může být nebezpečné</li>
+                        <li>Pri pájení používejte odsávání par</li>
+                        <li>Vždy zkontrolujte polaritu před připojením</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mt-2 text-center">
+                <h2 class="section-title">Máte otázku?</h2>
+                <p>Pokud potřebujete pomoc s nějakým projektem nebo máte dotaz k elektrotechnice, neváhejte se ozvat!</p>
+                <a href="kontakt.html" class="cta-button">Zeptejte se</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Elektrické obvody</h3>
+                        <p>Sériové a paralelní zapojení, výpočty v obvodech, Kirchhoffovy zákony.</p>
+                        <span class="difficulty difficulty-easy">Začátečník</span>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>Kondenzátory a cívky</h3>
+                        <p>Principy fungování kondenzátorů a cívek, jejich chování v AC a DC obvodech.</p>
+                        <span class="difficulty difficulty-
