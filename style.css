@@ -11,7 +11,6 @@ body {
     color: #e0ede0;
     line-height: 1.6;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 .container {
@@ -177,7 +176,6 @@ main {
     background: linear-gradient(45deg, #4afe6b, #00fe64);
     transform: scaleX(0);
     transition: transform 0.3s ease;
-    transform-origin: left;
 }
 
 .card:hover::before {
@@ -272,7 +270,6 @@ main {
 .expandable-project {
     cursor: pointer;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
 }
 
 .project-header {
@@ -296,19 +293,254 @@ main {
     font-size: 1.2rem;
     color: #4afe6b;
     transition: transform 0.3s ease;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
 }
 
 .expandable-project.expanded .expand-icon {
     transform: rotate(180deg);
 }
 
-.expandable-project .project-details {
+.project-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.4s ease;
 }
 
-.expandable-project.expanded .project-details {
-    max-height: 1000px;
+.expandable-project.expanded .project-content {
+    max-height: 2000px;
+}
+
+.project-details {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(74, 254, 107, 0.2);
     margin-top: 1rem;
+}
+
+.project-details h5 {
+    color: #4afe6b;
+    margin-bottom: 0.8rem;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.project-details h5:first-child {
+    margin-top: 0;
+}
+
+.project-description p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    background: linear-gradient(135deg, #2d5a2d 0%, #4afe6b 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-features ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-features li {
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.project-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4afe6b;
+    font-weight: bold;
+}
+
+.schema-container {
+    background: rgba(74, 254, 107, 0.05);
+    border: 2px dashed rgba(74, 254, 107, 0.3);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schema-placeholder p {
+    color: #4afe6b;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(74, 254, 107, 0.2);
+}
+
+.project-link {
+    background: linear-gradient(135deg, #4afe6b 0%, #00fe64 100%);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 254, 107, 0.4);
+}
+
+.github-link {
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+}
+
+.github-link:hover {
+    box-shadow: 0 5px 15px rgba(51, 51, 51, 0.4);
+}
+
+.demo-link {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.demo-link:hover {
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.project-timeline ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-timeline li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    border-left: 2px solid rgba(74, 254, 107, 0.3);
+    margin-left: 0.5rem;
+}
+
+.project-timeline li::before {
+    content: '●';
+    position: absolute;
+    left: -6px;
+    color: #4afe6b;
+    background: #0f1a0f;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+}
+
+/* Stránky pro obsah */
+.content-page {
+    padding: 2rem 0;
+    min-height: calc(100vh - 160px);
+}
+
+.content-page h1 {
+    color: #4afe6b;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tutorial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tutorial-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+}
+
+.tutorial-card h3 {
+    color: #4afe6b;
+    margin-bottom: 1rem;
+}
+
+.difficulty {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+.difficulty-easy {
+    background: rgba(0, 255, 127, 0.2);
+    color: #00ff7f;
+}
+
+.difficulty-medium {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.difficulty-hard {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+/* Formuláře */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* ===== Modal pro zvětšení schémat ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 3000;
+    cursor: zoom-out;
+}
+
+.modal-overlay img,
+.modal-overlay iframe {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
