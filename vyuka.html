@@ -1,122 +1,154 @@
 <!DOCTYPE html>
 <html lang="cs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Výuka | VizM0r</title>
-
-    <!-- Globální styl pro celý web -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výuka - VizM0r</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <!-- =========  NAVIGACE  ========= -->
     <header>
-      <nav class="container">
-        <!-- Logo / Domovská stránka -->
-        <a href="index.html" class="logo">VizM0r</a>
-
-        <!-- Desktop odkazy -->
-        <ul class="nav-links">
-          <li><a href="index.html">Domů</a></li>
-          <li><a href="projekty.html">Projekty</a></li>
-          <li><a href="vyuka.html" class="active">Výuka</a></li>
-          <li><a href="napady.html">Nápady</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-
-        <!-- Hamburger pro mobily -->
-        <div class="mobile-menu mobile-menu-btn" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
-        </div>
-      </nav>
+        <nav class="container">
+            <div class="logo">VizM0r</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="projekty.html">Projekty</a></li>
+                <li><a href="vyuka.html" class="active">Výuka</a></li>
+                <li><a href="napady.html">Nápady</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
     </header>
 
     <!-- =========  HLAVNÍ OBSAH  ========= -->
-    <main class="content-page container">
-      <h1>Výuka – základy elektrotechniky</h1>
-      <p class="text-center mb-2">
-        Praktické návody, simulace a teoretické vysvětlení elektroniky od úplných
-        základů až po pokročilé koncepty.
-      </p>
+    <main class="content-page">
+        <div class="container">
+            <h1>Výuka – základy elektrotechniky</h1>
+            <p class="text-center mb-2">Praktické návody, simulace a&nbsp;teoretické vysvětlení elektroniky od úplných&nbsp;základů po pokročilé koncepty.</p>
 
-      <!-- Přehled témat (tzv. "karty") -->
-      <section class="tutorial-grid mt-2">
-        <!-- Ohmův zákon -->
-        <article class="tutorial-card">
-          <h3>Ohmův zákon</h3>
-          <span class="difficulty difficulty-easy">Začátečník</span>
-          <p>Základní vztah mezi napětím, proudem a odporem.</p>
-          <a href="#ohmuv-zakon" class="cta-button">Detail &rsaquo;</a>
-        </article>
+            <section>
+                <h2 class="section-title">Základní témata</h2>
 
-        <!-- Elektrické napětí -->
-        <article class="tutorial-card">
-          <h3>Elektrické napětí</h3>
-          <span class="difficulty difficulty-easy">Začátečník</span>
-          <p>Co je napětí, jak jej měřit a jak vzniká.</p>
-          <a href="#napeti" class="cta-button">Detail &rsaquo;</a>
-        </article>
+                <!-- =================  OHMŮV ZÁKON  ================= -->
+                <div class="project expandable-project" onclick="toggleProject(this)">
+                    <div class="project-header">
+                        <div class="project-header-content">
+                            <h4>Ohmův zákon</h4>
+                            <p class="project-short">Vztah mezi napětím, proudem a&nbsp;odporem.</p>
+                            <span class="project-status status-active">Začátečník</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-details">
+                            <div class="project-description">
+                                <h5>📝 Teorie:</h5>
+                                <p>Ohmův zákon popisuje vztah mezi elektrickým napětím <em>U</em>, proudem <em>I</em> a&nbsp;odporem <em>R</em> v&nbsp;obvodu:</p>
+                                <pre>U = R × I</pre>
+                            </div>
 
-        <!-- Rezistory v praxi -->
-        <article class="tutorial-card">
-          <h3>Rezistory v&nbsp;praxi</h3>
-          <span class="difficulty difficulty-medium">Středně&nbsp;pokročilý</span>
-          <p>Rozdělení rezistorů, značení, teplotní koeficienty.</p>
-          <a href="#rezistory" class="cta-button">Detail &rsaquo;</a>
-        </article>
-      </section>
+                            <div class="project-features">
+                                <h5>⚡ Praktický příklad:</h5>
+                                <ul>
+                                    <li>Rezistor 100&nbsp;Ω na baterii 9&nbsp;V → proud 90&nbsp;mA.</li>
+                                </ul>
+                            </div>
 
-      <!-- =========  DETAILY TÉMAT  ========= -->
-      <section id="ohmuv-zakon" class="section">
-        <h2>Ohmův zákon</h2>
-        <h4>Teorie</h4>
-        <p>
-          Ohmův zákon popisuje vztah mezi elektrickým napětím <em>U</em>, proudem
-          <em>I</em> a&nbsp;odporem <em>R</em> v&nbsp;obvodu:
-        </p>
-        <pre>U = R × I</pre>
-        <p>
-          Proud je přímo úměrný napětí a&nbsp;nepřímo úměrný odporu. Níže si
-          můžete vyzkoušet interaktivní kalkulačku.
-        </p>
-        <h4>Interaktivní simulace</h4>
-        <p>
-          <a href="https://www.falstad.com/circuit/" target="_blank"
-            >Spustit simulátor (externí)</a
-          >
-        </p>
-        <h4>Praktický příklad</h4>
-        <p>Rezistor 100&nbsp;Ω na baterii 9&nbsp;V &rarr; proud 90&nbsp;mA.</p>
-      </section>
+                            <div class="project-schema">
+                                <h5>🔌 Interaktivní simulace (Falstad):</h5>
+                                <div class="schema-container">
+                                    <iframe src="https://www.falstad.com/circuit/" width="100%" height="400" loading="lazy" title="Ohmův zákon simulace"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <section id="napeti" class="section">
-        <h2>Elektrické napětí</h2>
-        <h4>Teorie</h4>
-        <p>
-          Elektrické napětí vyjadřuje rozdíl elektrických potenciálů mezi dvěma
-          body. Jednotkou je volt (V).
-        </p>
-        <h4>Měření</h4>
-        <p>Postup správného připojení voltmetru v&nbsp;obvodu.</p>
-      </section>
+                <!-- ==============  ELEKTRICKÉ NAPĚTÍ  ============== -->
+                <div class="project expandable-project" onclick="toggleProject(this)">
+                    <div class="project-header">
+                        <div class="project-header-content">
+                            <h4>Elektrické napětí</h4>
+                            <p class="project-short">Co je napětí, jak vzniká a&nbsp;měří se.</p>
+                            <span class="project-status status-active">Začátečník</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-details">
+                            <div class="project-description">
+                                <h5>📝 Teorie:</h5>
+                                <p>Elektrické napětí vyjadřuje rozdíl elektrických potenciálů mezi dvěma body. Jednotkou je volt (V).</p>
+                            </div>
 
-      <section id="rezistory" class="section">
-        <h2>Rezistory v praxi</h2>
-        <h4>Druhy, pouzdra, tolerance</h4>
-        <ul>
-          <li>Uhlíkové, kovové, SMD, drátové</li>
-          <li>Kódování barevnými proužky</li>
-          <li>Teplotní závislost odporu</li>
-        </ul>
-      </section>
+                            <div class="project-features">
+                                <h5>📏 Měření:</h5>
+                                <ul>
+                                    <li>Správné připojení voltmetru paralelně k&nbsp;měřenému prvku.</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-schema">
+                                <h5>🔌 Interaktivní simulace (Falstad):</h5>
+                                <div class="schema-container">
+                                    <iframe src="https://www.falstad.com/circuit/" width="100%" height="400" loading="lazy" title="Elektrické napětí simulace"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==============  REZISTORY V PRAXI  ============== -->
+                <div class="project expandable-project" onclick="toggleProject(this)">
+                    <div class="project-header">
+                        <div class="project-header-content">
+                            <h4>Rezistory v&nbsp;praxi</h4>
+                            <p class="project-short">Rozdělení, značení a&nbsp;teplotní koeficienty rezistorů.</p>
+                            <span class="project-status status-active">Středně&nbsp;pokročilý</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-details">
+                            <div class="project-description">
+                                <h5>📝 Druhy rezistorů:</h5>
+                                <p>Uhlíkové, kovové, SMD a&nbsp;drátové provedení.</p>
+                            </div>
+
+                            <div class="project-features">
+                                <h5>🎯 Důležité vlastnosti:</h5>
+                                <ul>
+                                    <li>Barevné kódování hodnot.</li>
+                                    <li>Tolerance a&nbsp;teplotní koeficient.</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-schema">
+                                <h5>🔌 Interaktivní simulace (Falstad):</h5>
+                                <div class="schema-container">
+                                    <iframe src="https://www.falstad.com/circuit/" width="100%" height="400" loading="lazy" title="Rezistory simulace"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
     </main>
 
     <!-- =========  PATIČKA  ========= -->
     <footer>
-      &copy; 2025 VizM0r. Všechna práva vyhrazena.
+        <div class="container">
+            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
+        </div>
     </footer>
 
-    <!-- Globální skript (všechny stránky sdílejí jeden) -->
-    <script src="script.js" defer></script>
-  </body>
+    <!-- =========  GLOBÁLNÍ SKRIPT  ========= -->
+    <script src="script.js"></script>
+</body>
 </html>
