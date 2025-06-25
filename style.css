@@ -386,7 +386,7 @@ main {
     border: 2px dashed rgba(74, 254, 107, 0.3);
     width: 100%; /* nebo konkrétní hodnotu jako 500px */
     height: auto; /* zachová poměr stran */
-    max-width: 80%; /* maximální šířka */
+    max-width: 100%; /* maximální šířka */
 }
 
 .schema-placeholder p {
