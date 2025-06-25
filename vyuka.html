@@ -28,20 +28,147 @@
     <main class="content-page">
         <div class="container">
             <h1>Základy elektrotechniky</h1>
-            <p class="text-center mb-2">Naučte se základy elektrotechniky a elektroniky prostřednictvím praktických návodů a teoretických vysvětlení.</p>
+            <p class="text-center mb-2">Naučte se základy elektrotechniky a elektroniky prostřednictvím praktických návodů, simulací a teoretických vysvětlení.</p>
 
             <section>
                 <h2 class="section-title">Základní pojmy</h2>
                 <div class="tutorial-grid">
-                    <div class="tutorial-card">
-                        <h3>Elektrický proud</h3>
-                        <p>Základní vysvětlení elektrického proudu, napětí a odporu. Ohmův zákon a jeho praktické využití.</p>
-                        <span class="difficulty difficulty-medium">Pokročilý</span>
+                    <!-- Ohmův zákon -->
+                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
+                        <div class="tutorial-header">
+                            <div class="tutorial-header-content">
+                                <h3>Ohmův zákon</h3>
+                                <p class="tutorial-short">Základní vztah mezi napětím, proudem a odporem. Základ všech výpočtů v elektrotechnice.</p>
+                                <span class="difficulty difficulty-easy">Začátečník</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-details">
+                                <h5>📚 Teorie</h5>
+                                <div class="tutorial-description">
+                                    <p><strong>Ohmův zákon</strong> je základní fyzikální zákon, který popisuje vztah mezi elektrickým napětím (U), proudem (I) a odporem (R) v elektrickém obvodu.</p>
+                                    <p><strong>Vzorec:</strong> U = R × I</p>
+                                    <p>Kde:</p>
+                                    <ul style="margin-left: 1.5rem;">
+                                        <li><strong>U</strong> - napětí [V] (volty)</li>
+                                        <li><strong>I</strong> - proud [A] (ampéry)</li>
+                                        <li><strong>R</strong> - odpor [Ω] (ohmy)</li>
+                                    </ul>
+                                    <p>Tento zákon nám říká, že proud procházející vodičem je přímo úměrný napětí a nepřímo úměrný odporu.</p>
+                                </div>
+                                
+                                <h5>🔬 Interaktivní simulace</h5>
+                                <div class="falstad-container">
+                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABdxjQF8QAmF5wAz7BiZMhWq0gM2ULhIjsEJCjVEyKUGUhGNRJwACfHSbPCdnGgEMPJs5RMACKl94sALl5gUAAb4Qz46Ot6AJ6E0pC0iJa2TogJbj6AHZ4BGRK+EOo5+bFp6VnZ2sLF6TjFdgaI1fFBNb5+4UEVVSExPCVRtGnJrYb4baH4g9a0hfn4I2VTQXF9-WMy03O5C4vJVLUb2xuuCUd7mVt+O-urO3k7YidnV0EtLUAAiRhgmAFOL04BA">
+                                    </iframe>
+                                    <p class="falstad-note">💡 Klikněte na simulátor a experimentujte s hodnotami odporu a napětí</p>
+                                </div>
+
+                                <h5>🧮 Praktické příklady</h5>
+                                <div class="tutorial-examples">
+                                    <div class="example-box">
+                                        <h6>Příklad 1: Výpočet proudu</h6>
+                                        <p>Máme rezistor 100Ω připojený na baterii 9V. Jaký proud jím protéká?</p>
+                                        <p><strong>Řešení:</strong> I = U/R = 9V/100Ω = 0,09A = 90mA</p>
+                                    </div>
+                                    <div class="example-box">
+                                        <h6>Příklad 2: Výpočet odporu</h6>
+                                        <p>LED diodou protéká proud 20mA při napětí 2V. Jaký je její odpor?</p>
+                                        <p><strong>Řešení:</strong> R = U/I = 2V/0,02A = 100Ω</p>
+                                    </div>
+                                </div>
+
+                                <h5>💡 Praktické tipy</h5>
+                                <ul class="tips-list">
+                                    <li>Ohmův zákon platí pro stejnosměrné i střídavé obvody</li>
+                                    <li>U LED diod se odpor mění s teplotou a proudem</li>
+                                    <li>Vždy kontrolujte jednotky před výpočtem</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tutorial-card">
-                        <h3>Střídavý proud</h3>
-                        <p>AC obvody, fázory, impedance a výpočty v střídavých obvodech.</p>
-                        <span class="difficulty difficulty-medium">Pokročilý</span>
+
+                    <!-- Elektrický proud -->
+                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
+                        <div class="tutorial-header">
+                            <div class="tutorial-header-content">
+                                <h3>Elektrický proud</h3>
+                                <p class="tutorial-short">Co je to elektrický proud, jak vzniká a jak se měří.</p>
+                                <span class="difficulty difficulty-easy">Začátečník</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-details">
+                                <h5>📚 Teorie</h5>
+                                <div class="tutorial-description">
+                                    <p><strong>Elektrický proud</strong> je pohyb elektrických nábojů (elektronů) vodičem.</p>
+                                    <p>Proud měříme v ampérech [A] a značíme písmenem I (z anglického "intensity").</p>
+                                    <p><strong>Směr proudu:</strong> Konvenčně se proud označuje ve směru od kladného k zápornému pólu, což je opačný směr než skutečný pohyb elektronů.</p>
+                                </div>
+                                
+                                <h5>🔬 Simulace - Jednoduchý obvod</h5>
+                                <div class="falstad-container">
+                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABdxj4s0QAmAvvnCEi5AL4gAzOhz4wEHAEo8IhVmxZs2DYmRDrOCmhSbdyJEm0nq9lfSxFrRhgZ4+WZOOLnAUAAb46g76hs4AnocIrFAMLjhIPFq8YQCmAMYANgC2AMadoWBRWIhgmAAcMAAcKcCIiKyIRHlgmEKJrLSB6lSJOtlgBdrBjREK4WUt-jJgMzMJRYiNzSHhva0OI8ODNWJjs-MJi3JL6au7e0fKAOaJLrQAULwCAMoXrfmJLSfJbKF0UlBiJh4NgUEhaDpSOQ3LpfHgSERJO5MPhhqNdPllqtiDJcXjmLIQJNIUClhCMK5ydDaOCURTyTTHBzuTxzJyuZs+RteXDhb1hLCRULzpLgdKOcq7gr9prgVrxXRgAAiGGGMAAToaEAaEAA">
+                                    </iframe>
+                                    <p class="falstad-note">💡 Pozorujte animaci elektronů v obvodu</p>
+                                </div>
+
+                                <h5>📏 Jak měřit proud</h5>
+                                <div class="tutorial-examples">
+                                    <div class="example-box">
+                                        <h6>Multimetrem</h6>
+                                        <p>Ampérmetr zapojujeme <strong>do série</strong> s měřeným obvodem.</p>
+                                        <p><strong>Pozor:</strong> Ampérmetr má velmi malý vnitřní odpor!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Střídavý proud -->
+                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
+                        <div class="tutorial-header">
+                            <div class="tutorial-header-content">
+                                <h3>Střídavý proud (AC)</h3>
+                                <p class="tutorial-short">AC obvody, fázory, impedance a výpočty v střídavých obvodech.</p>
+                                <span class="difficulty difficulty-medium">Pokročilý</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-details">
+                                <h5>📚 Teorie</h5>
+                                <div class="tutorial-description">
+                                    <p><strong>Střídavý proud (AC)</strong> mění svůj směr a velikost periodicky. V Evropě má frekvenci 50 Hz.</p>
+                                    <p>Základní charakteristiky AC:</p>
+                                    <ul style="margin-left: 1.5rem;">
+                                        <li><strong>Amplituda</strong> - maximální hodnota</li>
+                                        <li><strong>Frekvence</strong> - počet period za sekundu [Hz]</li>
+                                        <li><strong>Fáze</strong> - posun na časové ose</li>
+                                        <li><strong>RMS</strong> - efektivní hodnota (230V v zásuvce)</li>
+                                    </ul>
+                                </div>
+                                
+                                <h5>🔬 AC simulace</h5>
+                                <div class="falstad-container">
+                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABdwBmfYkAJmwBcNDgCZYfCAH1+AX34gAvvnCEi5KjWrQs2MhPadOXHvwFCRKgCoQV4iAEMQCjFhCaG2cZCNH+6gAo1WgBTanpMDAAOKE4YAFNOGABHJiRyGGzc8X12TCQQCGJsIgdjdyQtKChBGgBzROwcmD9YbFj0rPAKWsqkOh7eJG60FvoCJC6e2oLa6c6Wnok+1sGCkbGmqdF5qc6lsrr8pDfazdIKp4-agpKKvgOJo9PT4fG-JJw6KRJOKBcWywbAoJDxPQOIiKOI-faDPLlYrLTaSB6vYLvb6fH5AiQJOHw0qI4Bo4BqRJtMBgQw4IisNpMMn49HNQmE+bE4lUz5k0y05mk-bMsacziNd7UxkKgBMkKQco4NJm-JpcLmj2+MueG2W3xFBRte0+uxtzsFdtKDt2jvdNKmhN+brZ3s5Lv6Xw9XO9q32koWD1lFNjwbDRqTivjRr+xv2WqJEOgQzpFLQqvEGptauzRvzSYNNdThbTdfzjbLdrtRJOOdbDd7RJJXd7qsHMuHNZhQfLg8rSaLZRTY7z44nE6X5vX4J38I3W+3SdP5vnE63+7nJ8vN-vR8PZ-ne9Xq7v6-Pa5X++f1-Pa7Xe7PzY3i8-3YfJ6f1+vz6fL7f3-nL4f9-ve5fz7vL+f9-vf9Pj4fL+f7-vX7v36f36fP4f96fd9fH7f75fX7fF4vH6f17-z-P8-T9vL-vH7vX7vF9f36vl8f96fd8fz-P8-T9vL-vH7vX7vF9f36vl8f96fd8fz-P8-T9vL-vH7vX7vF9f36vl8f96fd8fz-P8-T9vL-vH7vX7vF9f36vl8f96fd8fz-P8-T9vL-vH7vX7vF9f36vl8f96fd8fz-P8-">
+                                    </iframe>
+                                    <p class="falstad-note">💡 Sledujte průběh střídavého napětí a proudu</p>
+                                </div>
+
+                                <h5>⚡ RMS hodnoty</h5>
+                                <div class="tutorial-examples">
+                                    <div class="example-box">
+                                        <h6>Co je RMS?</h6>
+                                        <p>RMS (Root Mean Square) je efektivní hodnota AC signálu.</p>
+                                        <p><strong>Pro sinusovku:</strong> RMS = Špička / √2 ≈ Špička / 1,414</p>
+                                        <p><strong>Příklad:</strong> 230V ze zásuvky má špičku ~325V</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -49,120 +176,135 @@
             <section class="mt-2">
                 <h2 class="section-title">Elektronické součástky</h2>
                 <div class="tutorial-grid">
-                    <div class="tutorial-card">
-                        <h3>Rezistory</h3>
-                        <p>Typy rezistorů, barevné kódy, výkonové ztráty a praktické použití.</p>
-                        <span class="difficulty difficulty-easy">Začátečník</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Diody a LED</h3>
-                        <p>Princip fungování diod, typy diod, LED diody a jejich zapojení.</p>
-                        <span class="difficulty difficulty-easy">Začátečník</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Tranzistory</h3>
-                        <p>Bipolární a unipolární tranzistory, základní zapojení a praktické využití.</p>
-                        <span class="difficulty difficulty-medium">Pokročilý</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Integrované obvody</h3>
-                        <p>Operační zesilovače, komparátory, časovače (555) a jejich aplikace.</p>
-                        <span class="difficulty difficulty-hard">Expert</span>
-                    </div>
-                </div>
-            </section>
+                    <!-- Rezistory -->
+                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
+                        <div class="tutorial-header">
+                            <div class="tutorial-header-content">
+                                <h3>Rezistory</h3>
+                                <p class="tutorial-short">Typy rezistorů, barevné kódy, výkonové ztráty a praktické použití.</p>
+                                <span class="difficulty difficulty-easy">Začátečník</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-details">
+                                <h5>📚 Co je rezistor</h5>
+                                <div class="tutorial-description">
+                                    <p><strong>Rezistor</strong> je elektronická součástka, která klade odpor průchodu elektrického proudu.</p>
+                                    <p><strong>Použití:</strong></p>
+                                    <ul style="margin-left: 1.5rem;">
+                                        <li>Omezení proudu</li>
+                                        <li>Dělení napětí</li>
+                                        <li>Pull-up/pull-down odpory</li>
+                                        <li>Zakončovací odpory</li>
+                                    </ul>
+                                </div>
+                                
+                                <h5>🎨 Barevný kód</h5>
+                                <div class="color-code-table">
+                                    <div class="example-box">
+                                        <h6>4-páskový kód</h6>
+                                        <p><strong>1. pásek:</strong> První číslice</p>
+                                        <p><strong>2. pásek:</strong> Druhá číslice</p>
+                                        <p><strong>3. pásek:</strong> Násobitel (počet nul)</p>
+                                        <p><strong>4. pásek:</strong> Tolerance</p>
+                                    </div>
+                                    <div class="example-box">
+                                        <h6>Příklad: Červená-Fialová-Hnědá-Zlatá</h6>
+                                        <p>2-7-×10-±5% = 270Ω ±5%</p>
+                                    </div>
+                                </div>
 
-            <section class="mt-2">
-                <h2 class="section-title">Praktické návody</h2>
-                <div class="tutorial-grid">
-                    <div class="tutorial-card">
-                        <h3>Jak číst schéma</h3>
-                        <p>Základní symboly, čtení elektronických schémat a jejich interpretace.</p>
-                        <span class="difficulty difficulty-easy">Začátečník</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Pájení pro začátečníky</h3>
-                        <p>Základy pájení, výběr nástrojů, techniky a časté chyby.</p>
-                        <span class="difficulty difficulty-easy">Začátečník</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Měření multimetrem</h3>
-                        <p>Jak používat multimetr, měření napětí, proudu, odporu a kontinuity.</p>
-                        <span class="difficulty difficulty-easy">Začátečník</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Návrh DPS</h3>
-                        <p>Základy návrhu desek plošných spojů, software a výrobní proces.</p>
-                        <span class="difficulty difficulty-hard">Expert</span>
-                    </div>
-                </div>
-            </section>
+                                <h5>🔬 Simulace - Dělič napětí</h5>
+                                <div class="falstad-container">
+                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABdxQF8QAmeKcAMz4gyLDhy6QuEAIbdRXEWIkzQEugGNu3GAEMuktqx7T+Q0eKnAAgACdZs8eInT5i5YfKAlv3n6OUAHhUdFRkVEhEKFCJEJhsKNjQOKRkKEQAJ0sU8NS4+OSsyrAIbCgcjzsnFzKE6oacrIam7taAc3LGlsa2xvqstp6s3t7c+u6J7pm5jv6VgcJh3ZmqKcaWtqO5+eP5xaOuzs4y-oHyPZ2Dw8Oh4e6z693jqfPqGd1kZ4A">
+                                    </iframe>
+                                    <p class="falstad-note">💡 Změňte hodnoty rezistorů a pozorujte změnu napětí</p>
+                                </div>
 
-            <section class="mt-2">
-                <h2 class="section-title">Arduino a mikrokontroléry</h2>
-                <div class="tutorial-grid">
-                    <div class="tutorial-card">
-                        <h3>Úvod do Arduina</h3>
-                        <p>Základy platformy Arduino, IDE, první projekt - blikající LED.</p>
-                        <span class="difficulty difficulty-easy">Začátečník</span>
+                                <h5>💪 Výkonové ztráty</h5>
+                                <div class="tutorial-examples">
+                                    <div class="example-box">
+                                        <h6>Výpočet výkonu</h6>
+                                        <p><strong>P = U × I = U²/R = I² × R</strong></p>
+                                        <p>Příklad: 100Ω rezistor při 5V</p>
+                                        <p>P = 5²/100 = 0,25W</p>
+                                        <p>→ Stačí 1/4W rezistor</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tutorial-card">
-                        <h3>Senzory a Arduino</h3>
-                        <p>Připojení různých senzorů (teplota, světlo, pohyb) k Arduino desce.</p>
-                        <span class="difficulty difficulty-medium">Pokročilý</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Komunikační protokoly</h3>
-                        <p>I2C, SPI, UART - jak fungují a jak je používat s mikrokontroléry.</p>
-                        <span class="difficulty difficulty-hard">Expert</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>ESP32 a WiFi</h3>
-                        <p>Programování ESP32, WiFi připojení, webový server a IoT aplikace.</p>
-                        <span class="difficulty difficulty-medium">Pokročilý</span>
-                    </div>
-                </div>
-            </section>
 
-            <section class="mt-2">
-                <h2 class="section-title">Bezpečnost</h2>
-                <div class="card">
-                    <h3>⚠️ Důležité bezpečnostní pokyny</h3>
-                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                        <li>Nikdy nepracujte s elektřinou mokrýma rukama</li>
-                        <li>Před prací na obvodu vždy odpojte napájení</li>
-                        <li>Používejte správné ochranné pomůcky</li>
-                        <li>Pozor na vysoká napětí - nad 50V může být nebezpečné</li>
-                        <li>Pri pájení používejte odsávání par</li>
-                        <li>Vždy zkontrolujte polaritu před připojením</li>
-                    </ul>
-                </div>
-            </section>
+                    <!-- Diody -->
+                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
+                        <div class="tutorial-header">
+                            <div class="tutorial-header-content">
+                                <h3>Diody a LED</h3>
+                                <p class="tutorial-short">Princip fungování diod, typy diod, LED diody a jejich zapojení.</p>
+                                <span class="difficulty difficulty-easy">Začátečník</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-details">
+                                <h5>📚 Princip diody</h5>
+                                <div class="tutorial-description">
+                                    <p><strong>Dioda</strong> je polovodičová součástka, která vede proud pouze jedním směrem.</p>
+                                    <p><strong>Anoda</strong> - kladný pól (+)</p>
+                                    <p><strong>Katoda</strong> - záporný pól (-)</p>
+                                    <p>Proud může procházet pouze z anody do katody.</p>
+                                </div>
 
-            <section class="mt-2 text-center">
-                <h2 class="section-title">Máte otázku?</h2>
-                <p>Pokud potřebujete pomoc s nějakým projektem nebo máte dotaz k elektrotechnice, neváhejte se ozvat!</p>
-                <a href="kontakt.html" class="cta-button">Zeptejte se</a>
-            </section>
-        </div>
-    </main>
+                                <h5>🔬 Simulace - Usměrnění</h5>
+                                <div class="falstad-container">
+                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKADdxQF8kAmeDOjDF8YXSKTFyQAtgEMA7AFY8+MEOpFKQOiVITSEJBhGNGTRpwsAtV2HKN7ACYcTZy1du3HbJBd4-N5c3LzcvnwhfqEhQRHhUcGAMeLYYJgAjsyYnAkA5jCYeJhxCUmYgUUO7qIlTmVlbhU+1RX51QGeNQHtLa0urW3VHS7dvepJKfbtfSrDA1X12iNNUwPN7b5LY-Pz3Utur6+r8wCmpbfPr6sP66-Pry8vS2-va8-vSwtr6+uPz0vLo-fl2eP7-P12e12+n2+XgAnsBsNhJgAj35QABHJFMPCIjAAdwRKLxCEw2EwOHhJNJWOx+IEJPJ+EpjLJBPxZNJJMw5NpIrpFLpuLx5KpNPFNOFNPFEsZzKFXJ5XJZ3LZfKFIqFrKF4rF0uFKtFsxl0tVstVsuF6tlatlyvl8oVGoVqpV6qVOpVBpFaoVWuV2uFOoFBqFpqFVuF-p1Jq1tu1Dt1NoFTt1Fq1Xp1Ps1fu1YZFgdFkZF4ZF8Y1CZFKZF6ZFBZFRY1ZYF1Y1dY1jZFLYFfY1nZF5YVw">
+                                    </iframe>
+                                    <p class="falstad-note">💡 Pozorujte, jak dioda propouští proud pouze jedním směrem</p>
+                                </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>easy">Začátečník</span>
+                                <h5>💡 LED diody</h5>
+                                <div class="tutorial-examples">
+                                    <div class="example-box">
+                                        <h6>LED charakteristiky</h6>
+                                        <p><strong>Červená LED:</strong> ~1,8V, 20mA</p>
+                                        <p><strong>Zelená LED:</strong> ~2,0V, 20mA</p>
+                                        <p><strong>Modrá LED:</strong> ~3,2V, 20mA</p>
+                                        <p><strong>Bílá LED:</strong> ~3,2V, 20mA</p>
+                                    </div>
+                                    <div class="example-box">
+                                        <h6>Výpočet předřadného odporu</h6>
+                                        <p>Pro 5V zdroj a červenou LED:</p>
+                                        <p>R = (5V - 1,8V) / 0,02A = 160Ω</p>
+                                        <p>→ Použijeme 180Ω (nejbližší vyšší)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tutorial-card">
-                        <h3>Elektrické obvody</h3>
-                        <p>Sériové a paralelní zapojení, výpočty v obvodech, Kirchhoffovy zákony.</p>
-                        <span class="difficulty difficulty-easy">Začátečník</span>
-                    </div>
-                    <div class="tutorial-card">
-                        <h3>Kondenzátory a cívky</h3>
-                        <p>Principy fungování kondenzátorů a cívek, jejich chování v AC a DC obvodech.</p>
-                        <span class="difficulty difficulty-
+
+                    <!-- Tranzistory -->
+                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
+                        <div class="tutorial-header">
+                            <div class="tutorial-header-content">
+                                <h3>Tranzistory</h3>
+                                <p class="tutorial-short">Bipolární a unipolární tranzistory, základní zapojení a praktické využití.</p>
+                                <span class="difficulty difficulty-medium">Pokročilý</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-details">
+                                <h5>📚 Typy tranzistorů</h5>
+                                <div class="tutorial-description">
+                                    <p><strong>Bipolární tranzistory (BJT):</strong></p>
+                                    <ul style="margin-left: 1.5rem;">
+                                        <li><strong>NPN:</strong> Běžnější, spíná při kladném napětí na bázi</li>
+                                        <li><strong>PNP:</strong> Spíná při záporném napětí na bázi</li>
+                                    </ul>
+                                    <p><strong>Vývody:</strong> Kolektor (C), Báze (B), Emitor (E)</p>
+                                </div>
+
+                                <h5>🔬 Simulace - Tranzistor jako spínač</h5>
+                                <div class="falstad-container">
+                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAGYQFcBbEdEAJmwBcATgE4AjAFYADAGYeAZhAAOAYzEQQ2bNnp8IhEdOlzFy1es07d+iEfJiQomAEx4CRYKIqQkaMlZOLm4+QSERAEsYTAArWgBGAFsAQwB2AGMebEj8djJY2MRJZk8-Lz8AoNDw6NiE5OYUxHYs3IyC7L8ygqrcosrWOIaohpa29syB7pyBzJyFhOWJ3LXJgvX8uZzN+c359fKV3L3CzcqN3LzJxqb2no6Bno7Rnray8dH5meHx5dnF6cnVwfHlxfnF0fXVwfXd0fXdxfXdwfnd0fnRxeX5wen9wfXZwfXhwf3Rwf3NwfnRweH1wfHVxfndwfXhxfn5wf3hwfnRze3pzen1zen5wf3hxfXRxe3lxe31ze3xzfHlzfnVzfXVzfXdwfnlxfX1yf3hyfnVxfXdxfX5yf3lxfX1xfXlyfX1ye31yf31ye3tye3pye31yf3pyfn1yf3tyf3pyfn1yf3tyf3lyf3lyfnVyf3VyfnVyfnVxfXVxfXVxfXVxfX1xfX1wfX1wfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVwfXVxfXVxfXVxfXVxfXVxfXVxfXVxfXVxfXVxfXVxfXVxfXVxf
