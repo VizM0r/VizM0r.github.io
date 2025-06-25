@@ -1,395 +1,122 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Výuka - VizM0r</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Výuka | VizM0r</title>
+
+    <!-- Globální styl pro celý web -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========  NAVIGACE  ========= -->
     <header>
-        <nav class="container">
-            <div class="logo">VizM0r</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Domů</a></li>
-                <li><a href="projekty.html">Projekty</a></li>
-                <li><a href="vyuka.html">Výuka</a></li>
-                <li><a href="napady.html">Nápady</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+      <nav class="container">
+        <!-- Logo / Domovská stránka -->
+        <a href="index.html" class="logo">VizM0r</a>
+
+        <!-- Desktop odkazy -->
+        <ul class="nav-links">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="projekty.html">Projekty</a></li>
+          <li><a href="vyuka.html" class="active">Výuka</a></li>
+          <li><a href="napady.html">Nápady</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+
+        <!-- Hamburger pro mobily -->
+        <div class="mobile-menu mobile-menu-btn" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
     </header>
 
-    <main class="content-page">
-        <div class="container">
-            <h1>Základy elektrotechniky</h1>
-            <p class="text-center mb-2">Naučte se základy elektrotechniky a elektroniky prostřednictvím praktických návodů, simulací a teoretických vysvětlení.</p>
+    <!-- =========  HLAVNÍ OBSAH  ========= -->
+    <main class="content-page container">
+      <h1>Výuka – základy elektrotechniky</h1>
+      <p class="text-center mb-2">
+        Praktické návody, simulace a teoretické vysvětlení elektroniky od úplných
+        základů až po pokročilé koncepty.
+      </p>
 
-            <section>
-                <h2 class="section-title">Základní pojmy</h2>
-                <div class="tutorial-grid">
-                    <!-- Ohmův zákon -->
-                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
-                        <div class="tutorial-header">
-                            <div class="tutorial-header-content">
-                                <h3>Ohmův zákon</h3>
-                                <p class="tutorial-short">Základní vztah mezi napětím, proudem a odporem. Základ všech výpočtů v elektrotechnice.</p>
-                                <span class="difficulty difficulty-easy">Začátečník</span>
-                            </div>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="tutorial-content">
-                            <div class="tutorial-details">
-                                <h5>📚 Teorie</h5>
-                                <div class="tutorial-description">
-                                    <p><strong>Ohmův zákon</strong> je základní fyzikální zákon, který popisuje vztah mezi elektrickým napětím (U), proudem (I) a odporem (R) v elektrickém obvodu.</p>
-                                    <p><strong>Vzorec:</strong> U = R × I</p>
-                                    <p>Kde:</p>
-                                    <ul style="margin-left: 1.5rem;">
-                                        <li><strong>U</strong> - napětí [V] (volty)</li>
-                                        <li><strong>I</strong> - proud [A] (ampéry)</li>
-                                        <li><strong>R</strong> - odpor [Ω] (ohmy)</li>
-                                    </ul>
-                                    <p>Tento zákon nám říká, že proud procházející vodičem je přímo úměrný napětí a nepřímo úměrný odporu.</p>
-                                </div>
-                                
-                                <h5>🔬 Interaktivní simulace</h5>
-                                <div class="falstad-container">
-                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABdxjQF8QAmF5wAz7BiZMhWq0gM2ULhIjsEJCjVEyKUGUhGNRJwACfHSbPCdnGgEMPJs5RMACKl94sALl5gUAAb4Qz46Ot6AJ6E0pC0iJa2TogJbj6AHZ4BGRK+EOo5+bFp6VnZ2sLF6TjFdgaI1fFBNb5+4UEVVSExPCVRtGnJrYb4baH4g9a0hfn4I2VTQXF9-WMy03O5C4vJVLUb2xuuCUd7mVt+O-urO3k7YidnV0EtLUAAiRhgmAFOL04BA">
-                                    </iframe>
-                                    <p class="falstad-note">💡 Klikněte na simulátor a experimentujte s hodnotami odporu a napětí</p>
-                                </div>
+      <!-- Přehled témat (tzv. "karty") -->
+      <section class="tutorial-grid mt-2">
+        <!-- Ohmův zákon -->
+        <article class="tutorial-card">
+          <h3>Ohmův zákon</h3>
+          <span class="difficulty difficulty-easy">Začátečník</span>
+          <p>Základní vztah mezi napětím, proudem a odporem.</p>
+          <a href="#ohmuv-zakon" class="cta-button">Detail &rsaquo;</a>
+        </article>
 
-                                <h5>🧮 Praktické příklady</h5>
-                                <div class="tutorial-examples">
-                                    <div class="example-box">
-                                        <h6>Příklad 1: Výpočet proudu</h6>
-                                        <p>Máme rezistor 100Ω připojený na baterii 9V. Jaký proud jím protéká?</p>
-                                        <p><strong>Řešení:</strong> I = U/R = 9V/100Ω = 0,09A = 90mA</p>
-                                    </div>
-                                    <div class="example-box">
-                                        <h6>Příklad 2: Výpočet odporu</h6>
-                                        <p>LED diodou protéká proud 20mA při napětí 2V. Jaký je její odpor?</p>
-                                        <p><strong>Řešení:</strong> R = U/I = 2V/0,02A = 100Ω</p>
-                                    </div>
-                                </div>
+        <!-- Elektrické napětí -->
+        <article class="tutorial-card">
+          <h3>Elektrické napětí</h3>
+          <span class="difficulty difficulty-easy">Začátečník</span>
+          <p>Co je napětí, jak jej měřit a jak vzniká.</p>
+          <a href="#napeti" class="cta-button">Detail &rsaquo;</a>
+        </article>
 
-                                <h5>💡 Praktické tipy</h5>
-                                <ul class="tips-list">
-                                    <li>Ohmův zákon platí pro stejnosměrné i střídavé obvody</li>
-                                    <li>U LED diod se odpor mění s teplotou a proudem</li>
-                                    <li>Vždy kontrolujte jednotky před výpočtem</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Rezistory v praxi -->
+        <article class="tutorial-card">
+          <h3>Rezistory v&nbsp;praxi</h3>
+          <span class="difficulty difficulty-medium">Středně&nbsp;pokročilý</span>
+          <p>Rozdělení rezistorů, značení, teplotní koeficienty.</p>
+          <a href="#rezistory" class="cta-button">Detail &rsaquo;</a>
+        </article>
+      </section>
 
-                    <!-- Šablona pro nové tutoriály -->
-                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
-                        <div class="tutorial-header">
-                            <div class="tutorial-header-content">
-                                <h3>Název tématu</h3>
-                                <p class="tutorial-short">Krátký popis tématu, který se zobrazí před rozkliknutím.</p>
-                                <span class="difficulty difficulty-easy">Začátečník</span>
-                            </div>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="tutorial-content">
-                            <div class="tutorial-details">
-                                <h5>📚 Teorie</h5>
-                                <div class="tutorial-description">
-                                    <p>Zde vložte teoretické vysvětlení tématu...</p>
-                                    <p><strong>Vzorce:</strong> Zde uvedte důležité vzorce</p>
-                                    <ul style="margin-left: 1.5rem;">
-                                        <li>Seznam důležitých bodů</li>
-                                        <li>Další důležité informace</li>
-                                    </ul>
-                                </div>
-                                
-                                <h5>🔬 Interaktivní simulace</h5>
-                                <div class="falstad-container">
-                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html">
-                                    </iframe>
-                                    <p class="falstad-note">💡 Popis simulace a návod k použití</p>
-                                </div>
+      <!-- =========  DETAILY TÉMAT  ========= -->
+      <section id="ohmuv-zakon" class="section">
+        <h2>Ohmův zákon</h2>
+        <h4>Teorie</h4>
+        <p>
+          Ohmův zákon popisuje vztah mezi elektrickým napětím <em>U</em>, proudem
+          <em>I</em> a&nbsp;odporem <em>R</em> v&nbsp;obvodu:
+        </p>
+        <pre>U = R × I</pre>
+        <p>
+          Proud je přímo úměrný napětí a&nbsp;nepřímo úměrný odporu. Níže si
+          můžete vyzkoušet interaktivní kalkulačku.
+        </p>
+        <h4>Interaktivní simulace</h4>
+        <p>
+          <a href="https://www.falstad.com/circuit/" target="_blank"
+            >Spustit simulátor (externí)</a
+          >
+        </p>
+        <h4>Praktický příklad</h4>
+        <p>Rezistor 100&nbsp;Ω na baterii 9&nbsp;V &rarr; proud 90&nbsp;mA.</p>
+      </section>
 
-                                <h5>🧮 Praktické příklady</h5>
-                                <div class="tutorial-examples">
-                                    <div class="example-box">
-                                        <h6>Příklad 1: Název příkladu</h6>
-                                        <p>Zadání příkladu...</p>
-                                        <p><strong>Řešení:</strong> Postup řešení</p>
-                                    </div>
-                                    <div class="example-box">
-                                        <h6>Příklad 2: Další příklad</h6>
-                                        <p>Zadání druhého příkladu...</p>
-                                        <p><strong>Řešení:</strong> Postup řešení</p>
-                                    </div>
-                                </div>
+      <section id="napeti" class="section">
+        <h2>Elektrické napětí</h2>
+        <h4>Teorie</h4>
+        <p>
+          Elektrické napětí vyjadřuje rozdíl elektrických potenciálů mezi dvěma
+          body. Jednotkou je volt (V).
+        </p>
+        <h4>Měření</h4>
+        <p>Postup správného připojení voltmetru v&nbsp;obvodu.</p>
+      </section>
 
-                                <h5>💡 Praktické tipy</h5>
-                                <ul class="tips-list">
-                                    <li>Tip č. 1</li>
-                                    <li>Tip č. 2</li>
-                                    <li>Tip č. 3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mt-2">
-                <h2 class="section-title">Elektronické součástky</h2>
-                <div class="tutorial-grid">
-                    <!-- Další tutoriály podle potřeby -->
-                    <div class="tutorial-card expandable-tutorial" onclick="toggleTutorial(this)" tabindex="0">
-                        <div class="tutorial-header">
-                            <div class="tutorial-header-content">
-                                <h3>Další téma</h3>
-                                <p class="tutorial-short">Popis dalšího tématu...</p>
-                                <span class="difficulty difficulty-medium">Pokročilý</span>
-                            </div>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="tutorial-content">
-                            <div class="tutorial-details">
-                                <!-- Stejná struktura jako výše -->
-                                <h5>📚 Teorie</h5>
-                                <div class="tutorial-description">
-                                    <p>Obsah bude doplněn...</p>
-                                </div>
-                                
-                                <h5>🔬 Interaktivní simulace</h5>
-                                <div class="falstad-container">
-                                    <iframe src="https://www.falstad.com/circuit/circuitjs.html">
-                                    </iframe>
-                                    <p class="falstad-note">💡 Simulace bude doplněna</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+      <section id="rezistory" class="section">
+        <h2>Rezistory v praxi</h2>
+        <h4>Druhy, pouzdra, tolerance</h4>
+        <ul>
+          <li>Uhlíkové, kovové, SMD, drátové</li>
+          <li>Kódování barevnými proužky</li>
+          <li>Teplotní závislost odporu</li>
+        </ul>
+      </section>
     </main>
 
+    <!-- =========  PATIČKA  ========= -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
-        </div>
+      &copy; 2025 VizM0r. Všechna práva vyhrazena.
     </footer>
 
-    <script>
-        // JavaScript pro rozbalování tutoriálů - stejný princip jako u projektů
-        function toggleTutorial(element) {
-            const content = element.querySelector('.tutorial-content');
-            const icon = element.querySelector('.expand-icon');
-            
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-                icon.textContent = '▼';
-                element.classList.remove('expanded');
-            } else {
-                // Zavřít všechny ostatní tutoriály
-                document.querySelectorAll('.expandable-tutorial').forEach(tutorial => {
-                    const tutorialContent = tutorial.querySelector('.tutorial-content');
-                    const tutorialIcon = tutorial.querySelector('.expand-icon');
-                    tutorialContent.style.display = 'none';
-                    tutorialIcon.textContent = '▼';
-                    tutorial.classList.remove('expanded');
-                });
-                
-                // Otevřít aktuální tutoriál
-                content.style.display = 'block';
-                icon.textContent = '▲';
-                element.classList.add('expanded');
-            }
-        }
-
-        // Keyboard support
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                if (e.target.classList.contains('expandable-tutorial')) {
-                    e.preventDefault();
-                    toggleTutorial(e.target);
-                }
-            }
-        });
-
-        // Mobile menu toggle (pokud ho používáte)
-        function toggleMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.classList.toggle('active');
-        }
-    </script>
-
-    <style>
-        /* Dodatečné styly pro tutoriály - doplňte do vašeho style.css */
-        .tutorial-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .tutorial-card {
-            background: var(--card-bg, #fff);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .tutorial-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .tutorial-header {
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .tutorial-header-content {
-            flex: 1;
-        }
-
-        .tutorial-header h3 {
-            margin: 0 0 0.5rem 0;
-            color: var(--primary-color, #2c3e50);
-        }
-
-        .tutorial-short {
-            margin: 0 0 1rem 0;
-            color: var(--text-secondary, #666);
-            line-height: 1.5;
-        }
-
-        .difficulty {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .difficulty-easy {
-            background: #e8f5e8;
-            color: #2d5a2d;
-        }
-
-        .difficulty-medium {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .difficulty-hard {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .expand-icon {
-            font-size: 1.2rem;
-            color: var(--primary-color, #2c3e50);
-            transition: transform 0.3s ease;
-        }
-
-        .tutorial-content {
-            display: none;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .tutorial-details {
-            padding: 1.5rem;
-        }
-
-        .tutorial-details h5 {
-            margin: 1.5rem 0 1rem 0;
-            color: var(--primary-color, #2c3e50);
-            font-size: 1.1rem;
-            border-bottom: 2px solid var(--accent-color, #3498db);
-            padding-bottom: 0.5rem;
-        }
-
-        .tutorial-details h5:first-child {
-            margin-top: 0;
-        }
-
-        .tutorial-description {
-            margin-bottom: 1.5rem;
-        }
-
-        .falstad-container {
-            margin: 1rem 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .falstad-container iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-        }
-
-        .falstad-note {
-            background: #f8f9fa;
-            padding: 0.75rem;
-            margin: 0.5rem 0 0 0;
-            font-style: italic;
-            color: #666;
-            text-align: center;
-        }
-
-        .tutorial-examples {
-            display: grid;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .example-box {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color, #3498db);
-        }
-
-        .example-box h6 {
-            margin: 0 0 0.5rem 0;
-            color: var(--primary-color, #2c3e50);
-        }
-
-        .tips-list {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .tips-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .tutorial-header {
-                padding: 1rem;
-            }
-            
-            .tutorial-details {
-                padding: 1rem;
-            }
-            
-            .falstad-container iframe {
-                height: 300px;
-            }
-        }
-    </style>
-</body>
+    <!-- Globální skript (všechny stránky sdílejí jeden) -->
+    <script src="script.js" defer></script>
+  </body>
 </html>
