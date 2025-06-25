@@ -26,17 +26,19 @@
     </header>
     <main class="content-page">
         <div class="container">
+          
             <h1>Moje projekty</h1>
             <p class="text-center mb-2">Zde najdete přehled všech mých elektrotechnických projektů - od jednoduchých obvodů po komplexní systémy.</p>
             
-            <section>
+         
                 <h2 class="section-title">Aktivní projekty</h2>
-                
+          
+              <section class="mt-2">  
                 <div class="project expandable-project" onclick="toggleProject(this)">
                     <div class="project-header">
                         <div class="project-header-content">
-                            <h4>LED Matrix Display 32x32</h4>
-                            <p class="project-short">Programovatelný LED panel s WiFi připojením pro zobrazování textů, obrázků a animací.</p>
+                            <h4>SmartHome</h4>
+                            <p class="project-short"> Chytrá domácnost ovládaná přes esphome.</p>
                             <span class="project-status status-active">Aktivní</span>
                         </div>
                         <div class="expand-icon">▼</div>
@@ -45,28 +47,26 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5>📝 Detailní popis:</h5>
-                                <p>Programovatelný LED panel s WiFi připojením pro zobrazování textů, obrázků a animací. Řízený pomocí ESP32 s webovým rozhraním pro snadné ovládání z telefonu nebo počítače.</p>
+                                <p> Udělám si vlastní univerzální PCB. Budu přes algoritmus ovládat svojí domácnost, kterou budu moc tměnit a přizpůsobovat ji mým zvykům a rutinám. </p>
                             </div>
                             
                             <div class="project-tech">
-                                <h5>🛠️ Použité technologie:</h5>
+                                <h5>🛠️ Použité Komponent:</h5>
                                 <div class="tech-tags">
-                                    <span class="tech-tag">ESP32</span>
-                                    <span class="tech-tag">WS2812B LED</span>
-                                    <span class="tech-tag">C++</span>
-                                    <span class="tech-tag">HTML/CSS/JS</span>
-                                    <span class="tech-tag">WiFi</span>
+                                    <span class="tech-tag">ESP32-WROOM-32D-16</span>
+                                    <span class="tech-tag">AMS1117-5.0</span>
+                                    <span class="tech-tag">L78L33ABUTR</span>
+                                    <span class="tech-tag">PRTR5V0U2X</span>
+                                    <span class="tech-tag">BSS138</span>
                                 </div>
                             </div>
                             
                             <div class="project-features">
                                 <h5>⚡ Funkce:</h5>
                                 <ul>
-                                    <li>Bezdrátové ovládání přes webové rozhraní</li>
-                                    <li>Uložení animací do EEPROM</li>
-                                    <li>Časovač pro automatické přepínání</li>
-                                    <li>Weather API integrace pro zobrazení počasí</li>
-                                    <li>Real-time hodiny s NTP synchronizací</li>
+                                    <li>OTA přes esphome</li>
+                                    <li>Možnost sepínaní 2x Relé</li>
+                                    <li>Možnost používání 3.3V i 5V I2C</li>
                                 </ul>
                             </div>
                             
@@ -90,15 +90,13 @@
                 </div>
             </section>
             
-            <section class="mt-2">
-                <h2 class="section-title">Dokončené projekty</h2>
-                
-                <div class="project expandable-project" onclick="toggleProject(this)">
+              <section class="mt-2">
+              <div class="project expandable-project" onclick="toggleProject(this)">
                     <div class="project-header">
                         <div class="project-header-content">
-                            <h4>Automatický zavlažovací systém</h4>
-                            <p class="project-short">Systém pro automatické zavlažování rostlin na základě vlhkosti půdy. Včetně mobilních notifikací.</p>
-                            <span class="project-status status-completed">Dokončený</span>
+                            <h4>Vozítko na dalkové ovládání</h4>
+                            <p class="project-short"> Vozítko an dalkové ovládání gyroskopem přes ESP32-to-ESP32 komunikaci .</p>
+                            <span class="project-status status-active">Aktivní</span>
                         </div>
                         <div class="expand-icon">▼</div>
                     </div>
@@ -106,29 +104,27 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5>📝 Detailní popis:</h5>
-                                <p>Kompletní automatizovaný systém pro zavlažování rostlin, který monitoruje vlhkost půdy a automaticky spouští zavlažování podle nastavených parametrů. Systém posílá notifikace na mobil a vede statistiky spotřeby vody.</p>
+                                <p> Autíčko bude ovládáné přes ESP32-to-ESP32 gyroskopem umístěným na ruce. Ten bude posílat data a autíčko podle náklonu pojede, STM32 bude hlídat přes sonické senzory (HC-SR04) hlídat bezpečnou vzdálenost autíčka od překážky. </p>
                             </div>
                             
                             <div class="project-tech">
-                                <h5>🛠️ Použité technologie:</h5>
+                                <h5>🛠️ Použité Komponent:</h5>
                                 <div class="tech-tags">
-                                    <span class="tech-tag">Arduino Nano</span>
-                                    <span class="tech-tag">Soil Moisture Sensor</span>
-                                    <span class="tech-tag">Water Pump</span>
-                                    <span class="tech-tag">WiFi ESP8266</span>
-                                    <span class="tech-tag">Blynk IoT</span>
+                                    <span class="tech-tag">ESP32-WROOM-32D-16</span>
+                                    <span class="tech-tag">STM32F030K6T6</span>
+                                    <span class="tech-tag">TB6612FNG_O</span>
+                                    <span class="tech-tag">2x PRTR5V0U2X</span>
+                                    <span class="tech-tag">10x HC-SR04</span>
+                                    <span class="tech-tag">2x MP1584 </span>
                                 </div>
                             </div>
                             
                             <div class="project-features">
                                 <h5>⚡ Funkce:</h5>
                                 <ul>
-                                    <li>Automatické měření vlhkosti půdy každých 30 minut</li>
-                                    <li>Nastavitelné prahy pro spuštění zavlažování</li>
-                                    <li>Push notifikace při zavlažování</li>
-                                    <li>Webové rozhraní pro monitorování</li>
-                                    <li>Statistiky spotřeby vody</li>
-                                    <li>Ruční ovládání přes aplikaci</li>
+                                    <li>Ovládní na dálku přes gyroskop</li>
+                                    <li>Autonomní řízení přes algoritmus</li>
+                                    <li>Ochrana před pádem a nárazem</li>
                                 </ul>
                             </div>
                             
@@ -144,127 +140,29 @@
                             
                             <div class="project-links">
                                 <a href="#" class="project-link github-link">📂 GitHub</a>
-                                <a href="#" class="project-link">📱 Aplikace</a>
-                                <a href="#" class="project-link">📈 Statistiky</a>
+                                <a href="#" class="project-link demo-link">🌐 Live Demo</a>
+                                <a href="#" class="project-link">📖 Dokumentace</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <section class="mt-2">
+              </section> 
+          
+          
+                <h2 class="section-title">Dokončené projekty</h2>
+              <section class="mt-2"> 
+            </section> 
+          
+             
                 <h2 class="section-title">Plánované projekty</h2>
                 
-                <div class="project expandable-project" onclick="toggleProject(this)">
-                    <div class="project-header">
-                        <div class="project-header-content">
-                            <h4>Automatická meteostanice</h4>
-                            <p class="project-short">Kompletní meteorologická stanice měřící teplotu, vlhkost, tlak, rychlost větru a srážky.</p>
-                            <span class="project-status status-planned">Plánovaný</span>
-                        </div>
-                        <div class="expand-icon">▼</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-details">
-                            <div class="project-description">
-                                <h5>📝 Plánovaný popis:</h5>
-                                <p>Profesionální meteorologická stanice s kompletním spektrem senzorů pro měření všech důležitých meteorologických parametrů. Data budou ukládána lokálně i odesílána do cloudu pro další analýzu.</p>
-                            </div>
-                            
-                            <div class="project-tech">
-                                <h5>🛠️ Plánované technologie:</h5>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">ESP32</span>
-                                    <span class="tech-tag">BME280</span>
-                                    <span class="tech-tag">Anemometr</span>
-                                    <span class="tech-tag">Rain Gauge</span>
-                                    <span class="tech-tag">Solar Panel</span>
-                                    <span class="tech-tag">LoRaWAN</span>
-                                </div>
-                            </div>
-                            
-                            <div class="project-features">
-                                <h5>⚡ Plánované funkce:</h5>
-                                <ul>
-                                    <li>Měření teploty, vlhkosti a atmosférického tlaku</li>
-                                    <li>Měření rychlosti a směru větru</li>
-                                    <li>Dešťoměr s přesností na 0.2mm</li>
-                                    <li>Solární napájení s backup baterií</li>
-                                    <li>LoRaWAN komunikace pro dlouhý dosah</li>
-                                    <li>Webové dashboard s grafy</li>
-                                    <li>Export dat do CSV</li>
-                                    <li>API pro třetí strany</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="project-schema">
-                                <h5>📊 Návrh architektury:</h5>
-                                <div class="schema-container">
-                                    <div class="schema-placeholder">
-                                        <p>Schéma bude vytvořeno během vývoje...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="project-timeline">
-                                <h5>📅 Časový plán:</h5>
-                                <ul>
-                                    <li><strong>Q2 2025:</strong> Návrh a objednání komponentů</li>
-                                    <li><strong>Q3 2025:</strong> Prototyp a testování</li>
-                                    <li><strong>Q4 2025:</strong> Finální verze a instalace</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project expandable-project" onclick="toggleProject(this)">
-                    <div class="project-header">
-                        <div class="project-header-content">
-                            <h4>Smart Home Hub</h4>
-                            <p class="project-short">Centrální jednotka pro ovládání všech smart zařízení v domácnosti.</p>
-                            <span class="project-status status-planned">Plánovaný</span>
-                        </div>
-                        <div class="expand-icon">▼</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-details">
-                            <div class="project-description">
-                                <h5>📝 Plánovaný popis:</h5>
-                                <p>Centrální hub pro integraci a ovládání všech smart zařízení v domácnosti. Podpora pro různé protokoly a vlastní webové rozhraní.</p>
-                            </div>
-                            
-                            <div class="project-tech">
-                                <h5>🛠️ Plánované technologie:</h5>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Raspberry Pi 4</span>
-                                    <span class="tech-tag">Docker</span>
-                                    <span class="tech-tag">Node.js</span>
-                                    <span class="tech-tag">React</span>
-                                    <span class="tech-tag">MQTT</span>
-                                    <span class="tech-tag">Zigbee</span>
-                                </div>
-                            </div>
-                            
-                            <div class="project-features">
-                                <h5>⚡ Plánované funkce:</h5>
-                                <ul>
-                                    <li>Podpora Zigbee, Z-Wave, WiFi zařízení</li>
-                                    <li>Vlastní webové a mobilní rozhraní</li>
-                                    <li>Automatizační scénáře</li>
-                                    <li>Hlasové ovládání</li>
-                                    <li>Integrace s Google Assistant/Alexa</li>
-                                    <li>Energetický monitoring</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <section class="mt-2">     
             </section>
             
             <section class="mt-2 text-center">
                 <h2 class="section-title">Máte nápad na spolupráci?</h2>
-                <p>Pokud máte zajímavý projekt nebo nápad, rád se s vámi spojím!</p>
+                <p>Pokud máte zajímavý projekt nebo nápad, rád s vámi budu spolupracovat!</p>
+                <br>
                 <a href="kontakt.html" class="cta-button">Napište mi</a>
             </section>
         </div>
