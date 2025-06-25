@@ -216,3 +216,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // Test: Zkontrolovat, jestli je toggleProject dostupná globálně
     console.log('toggleProject function available:', typeof window.toggleProject);
 });
+
+/* ===== Schémata – klik pro fullscreen ===== */
+function enableSchemaModal() {
+    document.querySelectorAll('.schema-container').forEach(container => {
+        container.style.cursor = 'zoom-in';
+
+        container.addEventListener('click', e => {
+            e.stopPropagation();
+
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+
+            // zkopíruje obsah (img nebo iframe)
+            const content = container.querySelector('img, iframe');
+            if (!content) return;
+
+            const cloned = content.cloneNode(true);
+            cloned.removeAttribute('width');
+            cloned.removeAttribute('height');
+            overlay.appendChild(cloned);
+
+            document.body.appendChild(overlay);
+
+            const close = () => overlay.remove();
+
+            overlay.addEventListener('click', close);
+            document.addEventListener('keydown', function esc(e) {
+                if (e.key === 'Escape') {
+                    close();
+                    document.removeEventListener('keydown', esc);
+                }
+            });
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    enableSchemaModal();
+});
+
