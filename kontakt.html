@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - VizM0r</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">VizM0r</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="projekty.html">Projekty</a></li>
+                <li><a href="vyuka.html">Výuka</a></li>
+                <li><a href="napady.html">Nápady</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
+    <main class="content-page">
+        <div class="container">
+            <h1>Kontakt</h1>
+            <p class="text-center mb-2">Máte dotaz, nápad na spolupráci nebo potřebujete pomoc s projektem? Neváhejte se ozvat!</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Email
+                    </h3>
+                    <p>Pro rychlou komunikaci a dotazy k projektům</p>
+                    <p><strong>email@example.com</strong></p>
+                    <p><em>Odpovídám obvykle do 24 hodin</em></p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        GitHub
+                    </h3>
+                    <p>Kód mých projektů a open source příspěvky</p>
+                    <p><strong>github.com/VizM0r</strong></p>
+                    <p><em>Sledujte moje nejnovější projekty</em></p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3z"/>
+                        </svg>
+                        Discord/Komunita
+                    </h3>
+                    <p>Rychlá komunikace a diskuse o projektech</p>
+                    <p><strong>VizM0r#1234</strong></p>
+                    <p><em>Online většinou večer</em></p>
+                </div>
+            </div>
+
+            <section class="mt-2">
+                <h2 class="section-title">Napište mi zprávu</h2>
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Jméno *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Předmět</label>
+                            <input type="text" id="subject" name="subject" placeholder="Dotaz k projektu, spolupráce, pomoc...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Zpráva *</label>
+                            <textarea id="message" name="message" required placeholder="Popište váš dotaz, nápad nebo problém..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn">Odeslat zprávu</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Často kladené dotazy</h2>
+                
+                <div class="project">
+                    <h4>❓ Můžete mi pomoci s mým projektem?</h4>
+                    <p>Samozřejmě! Rád poradím s elektrotechnickými projekty, návrhem obvodů nebo programováním mikrokontrolérů. Napište mi detaily a pokusím se pomoci.</p>
+                </div>
+
+                <div class="project">
+                    <h4>❓ Kde kupujete součástky?</h4>
+                    <p>Především na AliExpress pro běžné součástky, Mouser/Farnell pro specializované komponenty a TME pro rychlé dodání v ČR/SK.</p>
+                </div>
+
+                <div class="project">
+                    <h4>❓ Jaký software doporučujete pro návrh PCB?</h4>
+                    <p>Pro začátečníky EasyEDA (zdarma, online), pro pokročilejší KiCad (zdarma, open source) nebo Altium Designer (profesionální, placený).</p>
+                </div>
+
+                <div class="project">
+                    <h4>❓ Děláte komerční projekty?</h4>
+                    <p>Ano, nabízím konzultace, návrh obvodů a vývoj prototypů. Kontaktujte mě s detaily vašeho projektu a domluvíme se na podmínkách.</p>
+                </div>
+
+                <div class="project">
+                    <h4>❓ Můžu použít váš kód ve svém projektu?</h4>
+                    <p>Většina mých projektů je pod open source licencí. Zkontrolujte LICENSE soubor v GitHub repository. Osobní použití je většinou v pořádku.</p>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Co mohu nabídnout</h2>
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h3>🔧 Poradenství</h3>
+                        <p>Konzultace k elektrotechnickým projektům, výběr součástek, řešení problémů</p>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>⚡ Návrh obvodů</h3>
+                        <p>Schémata, PCB návrhy, simulace a optimalizace elektronických obvodů</p>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>💻 Programování</h3>
+                        <p>Arduino, ESP32, firmware pro mikrokontroléry, webové aplikace pro IoT</p>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>🎓 Výuka</h3>
+                        <p>Základy elektrotechniky, praktické workshopy, mentoringProcs projektů</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2 text-center">
+                <div class="card">
+                    <h3>🚀 Připraveni na nový projekt?</h3>
+                    <p>Ať už jste začátečník nebo pokročilý maker, rád vám pomůžu realizovat vaše nápady. Společně můžeme vytvořit něco úžasného!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
