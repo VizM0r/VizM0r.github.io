@@ -1,86 +1,67 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekty - VizM0r</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Moje projekty</title>
+
+  <!-- Původní globální styly (neměnit) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Neon-green / black override + accordion vzhled ⬇︎ -->
+  <link rel="stylesheet" href="theme-green.css">
 </head>
+
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">VizM0r</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Domů</a></li>
-                <li><a href="projekty.html">Projekty</a></li>
-                <li><a href="vyuka.html">Výuka</a></li>
-                <li><a href="napady.html">Nápady</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+  <header class="hero">
+    <h1>DIY Projekty</h1>
+  </header>
 
-    <main class="content-page">
-        <div class="container">
-            <h1>Moje projekty</h1>
-            <p class="text-center mb-2">Zde najdete přehled všech mých elektrotechnických projektů - od jednoduchých obvodů po komplexní systémy.</p>
+  <main class="projects">
 
-            <section>
-                <h2 class="section-title">Aktivní projekty</h2>
-                
-                <div class="project">
-                    <h4>LED Matrix Display 32x32</h4>
-                    <p>Programovatelný LED panel s WiFi připojením pro zobrazování textů, obrázků a animací. Řízený pomocí ESP32 s webovým rozhraním.</p>
-                    <p><strong>Technologie:</strong> ESP32, WS2812B LED pásky, C++, HTML/CSS/JavaScript</p>
-                    <p><strong>Funkce:</strong> Bezdrátové ovládání, uložení animací, časovač, Weather API integrace</p>
-                    <span class="project-status status-active">Aktivní</span>
-                </div>
+    <!-- ===== Projekt 1 ================================================= -->
+    <details class="project">
+      <summary>
+        <h4>ESP32 Meteo-stanice</h4>
+      </summary>
 
-            </section>
+      <div class="project-body">
+        <p>
+          Solárně napájená venkovní stanice s&nbsp;senzorem BMP280.
+          Odesílá data přes MQTT do Home Assistanta.
+        </p>
 
-            <section class="mt-2">
-                <h2 class="section-title">Dokončené projekty</h2>
-                
-                <div class="project">
-                    <h4>Automatický zavlažovací systém</h4>
-                    <p>Systém pro automatické zavlažování rostlin na základě vlhkosti půdy. Včetně mobilních notifikací.</p>
-                    <p><strong>Technologie:</strong> Arduino Nano, soil moisture sensor, water pump, WiFi modul</p>
-                    <span class="project-status status-completed">Dokončený</span>
-                </div>
+        <figure>
+          <img src="assets/projekty/meteo_schema.svg" alt="Schéma zapojení meteostanice">
+          <figcaption>Schéma zapojení PCB v&nbsp;KiCadu.</figcaption>
+        </figure>
 
-            </section>
+        <p><a href="https://github.com/username/meteo-station" target="_blank">Repozitář &xrarr;</a></p>
+      </div>
+    </details>
 
-            <section class="mt-2">
-                <h2 class="section-title">Plánované projekty</h2>
-                
-                <div class="project">
-                    <h4>Automatická meteostanice</h4>
-                    <p>Kompletní meteorologická stanice měřící teplotu, vlhkost, tlak, rychlost větru a srážky.</p>
-                    <p><strong>Plánované technologie:</strong> ESP32, BME280, anemometr, rain gauge</p>
-                    <span class="project-status status-planned">Plánovaný</span>
-                </div>
+    <!-- ===== Projekt 2 ================================================= -->
+    <details class="project">
+      <summary>
+        <h4>STM32 Robotické vozítko</h4>
+      </summary>
 
-            </section>
+      <div class="project-body">
+        <p>
+          Dvoumotorové šasi na 7.4&nbsp;V Li-Ion, řízené STM32F103.
+          A* path-finding běží lokálně, telemetrie v&nbsp;Grafana.
+        </p>
 
-            <section class="mt-2 text-center">
-                <h2 class="section-title">Máte nápad na spolupráci?</h2>
-                <p>Pokud máte zajímavý projekt nebo nápad, rád se s vámi spojím!</p>
-                <a href="kontakt.html" class="cta-button">Napište mi</a>
-            </section>
-        </div>
-    </main>
+        <figure>
+          <img src="assets/projekty/rover_render.jpg" alt="3D model vozítka">
+          <figcaption>3D render finálního šasi.</figcaption>
+        </figure>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
-        </div>
-    </footer>
+        <p><a href="https://github.com/username/rover" target="_blank">Repozitář &xrarr;</a></p>
+      </div>
+    </details>
 
-    <script src="script.js"></script>
+    <!-- ==== Další projekty přidávej ve stejném formátu ================ -->
+
+  </main>
 </body>
 </html>
