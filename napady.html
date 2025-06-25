@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nápady - VizM0r</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">VizM0r</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="projekty.html">Projekty</a></li>
+                <li><a href="vyuka.html">Výuka</a></li>
+                <li><a href="napady.html">Nápady</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <div class="container">
+            <h1>Nápady a koncepty</h1>
+            <p class="text-center mb-2">Místo pro sdílení nápadů, konceptů a budoucích projektů. Možná vás něco inspiruje!</p>
+
+            <section>
+                <h2 class="section-title">Nápady na projekty</h2>
+                
+                <div class="project">
+                    <h4>💡 Chytrý květináč</h4>
+                    <p>Květináč s automatickým zavlažováním, LED osvětlením pro růst rostlin a monitoringem přes mobil.</p>
+                    <p><strong>Možné funkce:</strong> Měření vlhkosti půdy, automatické zavlažování, LED grow světla, notifikace na telefon</p>
+                    <p><strong>Technologie:</strong> ESP32, soil moisture sensor, water pump, grow LED, mobile app</p>
+                </div>
+
+                <div class="project">
+                    <h4>🚗 Parkovací asistent</h4>
+                    <p>Systém pro garáž, který pomože při parkování a ukáže, kde máte volné místo.</p>
+                    <p><strong>Možné funkce:</strong> Ultrazvukové senzory, LED indikátory, buzzer, WiFi notifikace</p>
+                    <p><strong>Technologie:</strong> Arduino, HC-SR04, LED pásky, piezo buzzer</p>
+                </div>
+
+                <div class="project">
+                    <h4>🏠 Domácí energetický monitor</h4>
+                    <p>Zařízení pro monitoring spotřeby energie v domácnosti s detailní analýzou spotřebičů.</p>
+                    <p><strong>Možné funkce:</strong> Měření proudu, analýza spotřeby, predikce účtů, mobilní app</p>
+                    <p><strong>Technologie:</strong> ESP32, proudové transformátory, databáze, grafická vizualizace</p>
+                </div>
+
+                <div class="project">
+                    <h4>🎵 Hudební spektrální analyzér</h4>
+                    <p>Velký LED displej zobrazující spektrum hudby v reálném čase s různými vizuálními efekty.</p>
+                    <p><strong>Možné funkce:</strong> FFT analýza, 3D efekty, synchronizace s Spotify, beat detekce</p>
+                    <p><strong>Technologie:</strong> ESP32, MSGEQ7, LED matrix, I2S mikrofon</p>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Koncepty do budoucna</h2>
+                
+                <div class="project">
+                    <h4>🤖 Robotický pomocník</h4>
+                    <p>Malý autonomní robot pro domácnost s kamerou, hlasovým ovládáním a AI rozpoznáváním.</p>
+                    <p><strong>Vize:</strong> Hlasové ovládání, rozpoznávání objektů, autonomní navigace, vzdálené ovládání</p>
+                    <p><strong>Výzvy:</strong> Computer vision, machine learning, mechanická konstrukce</p>
+                </div>
+
+                <div class="project">
+                    <h4>🌱 Vertikální hydroponie</h4>
+                    <p>Automatizovaný systém pro pěstování zeleniny doma bez půdy s kompletním monitoringem.</p>
+                    <p><strong>Vize:</strong> Automatické dávkování živin, pH monitoring, optimální osvětlení, mobilní kontrola</p>
+                    <p><strong>Výzvy:</strong> Chemie živin, automatizace, senzory pro vodné roztoky</p>
+                </div>
+
+                <div class="project">
+                    <h4>⚡ Mikro větrná turbína</h4>
+                    <p>Kompaktní větrný generátor pro balkón nebo zahradu s efektivním ukládáním energie.</p>
+                    <p><strong>Vize:</strong> MPPT řízení, lithium baterie, smart grid připojení, monitoring výroby</p>
+                    <p><strong>Výzvy:</strong> Aerodynamika, generátor, regulace nabíjení, integrace do sítě</p>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Experimentální nápady</h2>
+                
+                <div class="project">
+                    <h4>🔬 DIY 3D skener</h4>
+                    <p>Levný 3D skener postavený z webkamery, laseru a otočné platformy.</p>
+                    <p><strong>Princip:</strong> Laserová triangulace, step motor, computer vision zpracování</p>
+                </div>
+
+                <div class="project">
+                    <h4>📡 LoRa meteorologická síť</h4>
+                    <p>Síť meteorologických stanic komunikujících přes LoRa pro monitoring počasí ve městě.</p>
+                    <p><strong>Princip:</strong> LoRa komunikace, mesh síť, centrální server, webové rozhraní</p>
+                </div>
+
+                <div class="project">
+                    <h4>🎯 Laserový projektor</h4>
+                    <p>DIY laser show projektor s galvanometry pro kreslení vzorů a synchronizaci s hudbou.</p>
+                    <p><strong>Princip:</strong> Galvanometer skenery, DAC řízení, bezpečnostní obvody</p>
+                </div>
+
+                <div class="project">
+                    <h4>🌡️ Bezkontaktní termometr</h4>
+                    <p>Přesný IR termometr s OLED displejem a datalogging funkcemi.</p>
+                    <p><strong>Princip:</strong> MLX90614 sensor, kalibrace, teplotní kompenzace</p>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Sdílejte své nápady</h2>
+                <div class="card">
+                    <h3>💭 Máte zajímavý nápad?</h3>
+                    <p>Pokud máte nápad na zajímavý elektrotechnický projekt, který by stál za realizaci, rád se o něj podělíte? Pošlete mi ho a možná se stane součástí této stránky nebo dokonce skutečným projektem!</p>
+                    <div class="text-center mt-2">
+                        <a href="kontakt.html" class="cta-button">Pošlete nápad</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-2">
+                <h2 class="section-title">Inspirace a zdroje</h2>
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h3>🎥 YouTube kanály</h3>
+                        <p>ElectroBOOM, GreatScott!, EEVblog - skvělé kanály pro inspiraci a vzdělávání</p>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>📚 Weby a fóra</h3>
+                        <p>Hackaday, Arduino forum, Reddit r/electronics - komunity plné nápadů</p>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>🛒 Součástky</h3>
+                        <p>AliExpress, Mouser, Farnell - kde sehnat součástky pro vaše projekty</p>
+                    </div>
+                    <div class="tutorial-card">
+                        <h3>🔧 Nástroje</h3>
+                        <p>KiCad, EasyEDA, Fusion 360 - software pro návrh a simulace</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
