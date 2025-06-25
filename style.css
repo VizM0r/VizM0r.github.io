@@ -523,3 +523,26 @@ main {
 .form-group {
     margin-bottom: 1.5rem;
 }
+
+
+/* ===== Modal pro zvětšení schémat ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 3000;
+    cursor: zoom-out;
+}
+
+.modal-overlay img,
+.modal-overlay iframe {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
