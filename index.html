@@ -1,28 +1,105 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Můj Projekt</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VizM0r - Elektrotechnika & Projekty</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    Můj Projekt
-  </header>
+    <header>
+        <nav class="container">
+            <div class="logo">VizM0r</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="projekty.html">Projekty</a></li>
+                <li><a href="vyuka.html">Výuka</a></li>
+                <li><a href="napady.html">Nápady</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-  <nav>
-    <a href="index.html">Domů</a>
-    <a href="Stranka1.html">Stránka 1</a>
-  </nav>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="floating">Vítejte v mém světě elektrotechniky</h1>
+                <p>Zde sdílím své projekty, nápady a znalosti z oblasti elektrotechniky. Objevte se mnou fascinující svět elektroniky!</p>
+                <a href="projekty.html" class="cta-button">Prohlédnout projekty</a>
+            </div>
+        </section>
 
-  <main>
-    <h1>Vítej na hlavní stránce!</h1>
-    <p>Tady můžeš představit svůj projekt. Přidej info o tom, co děláš, co stavíš nebo zkoumáš.</p>
-  </main>
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">O mně</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            Elektrotechnika
+                        </h3>
+                        <p>Zabývám se návrhem a realizací elektronických obvodů, od jednoduchých projektů po komplexní systémy.</p>
+                    </div>
+                    <div class="card">
+                        <h3>
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                            Vzdělávání
+                        </h3>
+                        <p>Rád sdílím své znalosti a pomáhám ostatním porozumět základům elektrotechniky a elektroniky.</p>
+                    </div>
+                    <div class="card">
+                        <h3>
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M9 11H7v9a2 2 0 002 2h8a2 2 0 002-2V9a2 2 0 00-2-2h-3V5a2 2 0 00-2-2 2 2 0 00-2 2v2H9v4h2V9h4v11H9v-9z"/>
+                            </svg>
+                            Inovace
+                        </h3>
+                        <p>Hledám nové způsoby řešení problémů a neustále experimentuji s novými technologiemi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    &copy; 2025 VizM0r
-  </footer>
+        <section class="recent-projects">
+            <div class="container">
+                <h2 class="section-title">Nejnovější projekty</h2>
+                <div class="project">
+                    <h4>LED Matrix Display</h4>
+                    <p>Programovatelný LED displej s WiFi připojením pro zobrazování zpráv a animací.</p>
+                    <span class="project-status status-active">Aktivní</span>
+                </div>
+                <div class="project">
+                    <h4>Smart Home Controller</h4>
+                    <p>Centrální jednotka pro ovládání inteligentní domácnosti založená na ESP32.</p>
+                    <span class="project-status status-active">Aktivní</span>
+                </div>
+                <div class="project">
+                    <h4>Automatická meteostanice</h4>
+                    <p>Kompletní meteorologická stanice s bezdrátovým přenosem dat.</p>
+                    <span class="project-status status-planned">Plánovaný</span>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="projekty.html" class="cta-button">Všechny projekty</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VizM0r. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
