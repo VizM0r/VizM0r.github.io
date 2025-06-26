@@ -126,7 +126,7 @@ main {
     display: inline-block;
     padding: 12px 30px;
     background: linear-gradient(45deg, #4afe6b, #00fe64);
-    color: white;
+    color: black;
     text-decoration: none;
     border-radius: 50px;
     transition: all 0.3s ease;
