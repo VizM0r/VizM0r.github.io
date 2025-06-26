@@ -127,11 +127,13 @@ function handleProjectLinks() {
             e.stopPropagation(); // Zabránit zavření projektu při kliknutí na odkaz
             
             // Pokud je href="#", zobrazit notifikaci
+            // Pokud je href="#", zobrazit notifikaci
             if (link.getAttribute('href') === '#') {
                 e.preventDefault();
                 const linkText = link.textContent.trim();
                 showNotification(`${linkText} bude brzy k dispozici!`, 'info');
             }
+            
         });
     });
 }
