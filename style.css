@@ -341,8 +341,8 @@ main {
 }
 
 .tech-tag {
-    background: linear-gradient(135deg, #2d5a2d 0%, #4afe6b 100%);
-    color: white;
+    background: linear-gradient(135deg, green 10%, #4afe6b 100%);
+    color: black;
     padding: 6px 12px;
     border-radius: 15px;
     font-size: 0.85rem;
@@ -381,14 +381,6 @@ main {
     justify-content: center;
 }
 
-.schema-container img {
-    background: rgba(74, 254, 107, 0.05);
-    border: 2px dashed rgba(74, 254, 107, 0.3);
-    width: 100%; /* nebo konkrétní hodnotu jako 500px */
-    height: auto; /* zachová poměr stran */
-    max-width: 100%; /* maximální šířka */
-}
-
 .schema-placeholder p {
     color: #4afe6b;
     font-style: italic;
@@ -404,9 +396,10 @@ main {
     border-top: 1px solid rgba(74, 254, 107, 0.2);
 }
 
+
 .project-link {
-    background: linear-gradient(135deg, #4afe6b 0%, #00fe64 100%);
-    color: white;
+    background: linear-gradient(135deg, #4caf50 0%, #4caf50 100%);
+    color: black;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 20px;
