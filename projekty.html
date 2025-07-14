@@ -31,7 +31,7 @@
             <h1>Moje projekty</h1>
             <p class="text-center mb-2">Zde najdete přehled všech mých elektrotechnických projektů - od jednoduchých obvodů po komplexní systémy.</p>
             
-         <!-- //-------------------------------------------------------------------------------------------------------------------//  -->
+         <!-- //-----------------------------------------Aktivní--------------------------------------//  -->
             
                 <h2 class="section-title">Aktivní projekty</h2>
           
@@ -134,16 +134,62 @@
                 </div>
               </section> 
 
-            <!-- //-------------------------------------------------------------------------------------------------------------------//  -->
+            <!-- //-------------------------------------------Dokončené---------------------------------------------------//  -->
           
                 <h2 class="section-title">Dokončené projekty</h2>
           
               <section class="mt-2"> 
             </section> 
           
-            <!-- //-------------------------------------------------------------------------------------------------------------------//  -->
+            <!-- //------------------------------------------Plánované-------------------------------------------------------------//  -->
                 <h2 class="section-title">Plánované projekty</h2>
-                
+            
+            <section class="mt-2">  
+                <div class="project expandable-project" onclick="toggleProject(this)">
+                    <div class="project-header">
+                        <div class="project-header-content">
+                            <h4> Laboratorní zdroj </h4>
+                            <p class="project-short"> Můj custom laboratorní zdroj </p>
+                            <span class="project-status status-active">Aktivní</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-details">
+                            <div class="project-description">
+                                <h5>📝 Detailní popis:</h5>
+                                <p> Udělám si vlastní laboratorní zdroj, který bude disponovat různými ochranami a možnostmi napětí: 3.3V, 5V, 12V, proměnlivý 1-24V </p>
+                            </div>
+        
+                            <div class="project-tech">
+                                <h5>🛠️ Použité Komponent:</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"> STM32 </span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-features">
+                                <h5>⚡ Funkce:</h5>
+                                <ul>
+                                    <li> Proměnlivá možnost napětí </li>
+                                    <li> Stabilní napětí: 3.3V, 5V, 12V </li>
+                                    <li> Možné i funkce </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="project-tech">
+                                <h5> 📊 Dokumenty: </h5>
+                                <div class="tech-tags">
+                                    <a> Ještě nedostupná </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            
               <section class="mt-2">   
                 <div class="project expandable-project" onclick="toggleProject(this)">
                     <div class="project-header">
@@ -180,12 +226,6 @@
                                         <p>Schéma bude přidáno brzy...</p>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="project-links">
-                                <a href="#" class="project-link github-link">📂 GitHub</a>
-                                <a href="#" class="project-link demo-link">🌐 Live Demo</a>
-                                <a href="#" class="project-link">📖 Dokumentace</a>
                             </div>
                         </div>
                     </div>
