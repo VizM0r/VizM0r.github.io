@@ -534,37 +534,26 @@ main {
 }
 
 .render-item {
-    flex: 0 1 280px;
-    max-width: 280px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(74, 254, 107, 0.2);
     border-radius: 10px;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
     transition: border-color 0.3s ease;
-    
-    /* TATO ČÁST ZAJISTÍ OTOČENÍ A SPRÁVNÉ ZOBRAZENÍ */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: inline-block; /* Aby box přesně obepínal zmenšený obrázek */
 }
+
+
 .render-item:hover {
     border-color: #4afe6b; /* Při najetí myší se rámeček rozsvítí */
 }
 
 .render-item img {
-    width: 100%;
-    height: auto;
+    height: 250px;      /* TATO JEDINÁ HODNOTA URČUJE VELIKOST – klidně změň na 200px nebo 300px */
+    width: auto;        /* Šířka se automaticky dopočítá, aby se obrázek nezdeformoval */
     border-radius: 6px;
     display: block;
-    
-    /* OTOČENÍ OBRÁZKU O 90 STUPŇŮ PO SMĚRU HODIN */
-    transform: rotate(90deg); 
-    
-    /* VYMEZENÍ PROSTORU: Protože otočený obrázek na výšku 
-       potřebuje místo do stran, přidáme vertikální odsazení */
-    margin: 40px 0; 
+    margin: 0 auto;
 }
 
 .render-caption {
