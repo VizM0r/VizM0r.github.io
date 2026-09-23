@@ -528,13 +528,14 @@ main {
 .render-gallery {
     display: flex;
     gap: 1.5rem;
-    flex-wrap: wrap; /* Na mobilech skočí obrázky pod sebe */
+    flex-wrap: wrap;
     margin-top: 0.8rem;
+    justify-content: center; /* Zobrazí zmenšené obrázky uprostřed sekce */
 }
 
 .render-item {
-    flex: 1;
-    min-width: 280px; /* Zabrání přílišnému zmenšení obrázků */
+    flex: 0 1 200px; /* PRVNÍ ZMĚNA: Obrázek se nebude roztahovat, bude mít šířku 200px */
+    max-width: 200px; /* DRUHÁ ZMĚNA: Maximální pevná šířka boxu */
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(74, 254, 107, 0.2);
     border-radius: 10px;
