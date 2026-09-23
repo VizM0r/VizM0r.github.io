@@ -534,16 +534,21 @@ main {
 }
 
 .render-item {
-    flex: 0 1 200px; /* PRVNÍ ZMĚNA: Obrázek se nebude roztahovat, bude mít šířku 200px */
-    max-width: 200px; /* DRUHÁ ZMĚNA: Maximální pevná šířka boxu */
+    flex: 0 1 280px;
+    max-width: 280px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(74, 254, 107, 0.2);
     border-radius: 10px;
-    padding: 8px;
+    padding: 12px;
     text-align: center;
     transition: border-color 0.3s ease;
+    
+    /* TATO ČÁST ZAJISTÍ OTOČENÍ A SPRÁVNÉ ZOBRAZENÍ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
-
 .render-item:hover {
     border-color: #4afe6b; /* Při najetí myší se rámeček rozsvítí */
 }
@@ -553,6 +558,13 @@ main {
     height: auto;
     border-radius: 6px;
     display: block;
+    
+    /* OTOČENÍ OBRÁZKU O 90 STUPŇŮ PO SMĚRU HODIN */
+    transform: rotate(90deg); 
+    
+    /* VYMEZENÍ PROSTORU: Protože otočený obrázek na výšku 
+       potřebuje místo do stran, přidáme vertikální odsazení */
+    margin: 40px 0; 
 }
 
 .render-caption {
