@@ -520,6 +520,49 @@ main {
     color: #dc3545;
 }
 
+/* Sekce pro 3D rendery z KiCadu */
+.project-renders {
+    margin-top: 1.5rem;
+}
+
+.render-gallery {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Na mobilech skočí obrázky pod sebe */
+    margin-top: 0.8rem;
+}
+
+.render-item {
+    flex: 1;
+    min-width: 280px; /* Zabrání přílišnému zmenšení obrázků */
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(74, 254, 107, 0.2);
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.render-item:hover {
+    border-color: #4afe6b; /* Při najetí myší se rámeček rozsvítí */
+}
+
+.render-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+.render-caption {
+    display: block;
+    font-size: 0.85rem;
+    color: #a0bda0;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+
 /* Formuláře */
 .form-group {
     margin-bottom: 1.5rem;
