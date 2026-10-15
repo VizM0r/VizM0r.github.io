@@ -11,7 +11,7 @@
     <meta property="og:image" content="https://vizm0r.github.io/docs/logo.png">
     <link rel="icon" href="docs/logo.png" type="image/png">
     <title>Kontakt - VizMor</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
     <header>
@@ -46,8 +46,7 @@
                         Email
                     </h3>
                     <p>Pro rychlou komunikaci a dotazy k projektům</p>
-                    <p><strong><a href="mailto:tejmlbob@gmail.com">tejmlbob@gmail.com</a></strong></p>
-                    <p><button type="button" class="copy-btn" onclick="copyText(this, 'tejmlbob@gmail.com')">📋 Zkopírovat e-mail</button></p>
+                    <p><strong><a href="mailto:tejmlbob@gmail.com" onclick="copyEmail(this)" title="Kliknutím e-mail zkopíruješ a otevřeš">tejmlbob@gmail.com</a></strong><span class="copied-note" aria-live="polite"></span></p>
                     <p><em>Odpovídám obvykle do 24 hodin</em></p>
                 </div>
 
@@ -121,6 +120,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>

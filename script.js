@@ -219,26 +219,35 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('toggleProject function available:', typeof window.toggleProject);
 });
 
-/* ===== Kopírování textu (např. e-mailu) do schránky ===== */
-function copyText(button, text) {
-    const original = button.textContent;
-    const done = () => {
-        button.textContent = '✓ Zkopírováno';
-        setTimeout(() => { button.textContent = original; }, 2000);
-    };
-    const fallback = () => {
-        const area = document.createElement('textarea');
-        area.value = text;
-        area.style.position = 'fixed';
-        area.style.opacity = '0';
-        document.body.appendChild(area);
-        area.select();
-        try { document.execCommand('copy'); done(); } catch (e) { window.prompt('Zkopíruj e-mail:', text); }
-        document.body.removeChild(area);
-    };
+/* ===== Kliknutí na e-mail: zkopíruje adresu a otevře poštovní program ===== */
+function copyToClipboard(text) {
     if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(done, fallback);
-    } else {
-        fallback();
+        return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
     }
+    return legacyCopy(text);
+}
+
+function legacyCopy(text) {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(area);
+    return ok ? Promise.resolve() : Promise.reject();
+}
+
+function copyEmail(link) {
+    const email = link.textContent.trim();
+    const note = link.closest('p')?.querySelector('.copied-note');
+    copyToClipboard(email).then(() => {
+        if (!note) return;
+        note.textContent = '✓ Zkopírováno';
+        note.classList.add('visible');
+        clearTimeout(note._timer);
+        note._timer = setTimeout(() => note.classList.remove('visible'), 2000);
+    }).catch(() => {});
+    // Výchozí akce odkazu (mailto:) pokračuje – otevře poštovní program, pokud je nastavený.
 }
