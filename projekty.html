@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekty - VizMor</title>
-    <link rel="icon" href="docs/Logo.png" type="image/png">
+    <link rel="icon" href="docs/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
         <div class="container">
           
             <h1>Moje projekty</h1>
-            <p class="text-center mb-2">Zde najdete přehled všech mých elektrotechnických projektů - od jednoduchých obvodů po komplexní systémy.</p>
+            <p class="text-center mb-2">Tady najdeš přehled všech mých elektrotechnických projektů - od jednoduchých obvodů po komplexní systémy.</p>
             
              <!-- //-----------------------------------------Aktivní--------------------------------------//  -->
                 <h2 class="section-title">Aktivní projekty</h2>
@@ -48,20 +48,19 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5> Detailní popis:</h5>
-                                <p> Chytrý tester na součástky, který pouze při přiložení algoritsmus zjistí typ součástky a její stav. </p>
+                                <p> Chytrý tester součástek, který po přiložení součástky algoritmem zjistí její typ a stav. </p>
                             </div>
 
                              <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li> User friendly </li>
                                     <li> Rozpoznávání součástek </li>
                                     <li> Rozpoznávání stavu a hodnot </li>
                                 </ul>
                             </div>
                             
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
                                     <div class="tech-tags">
                                     <a href="docs/X.html" target="blank" class="project-link"> V procesu </a>
@@ -106,7 +105,7 @@
                     <div class="project-header">
                         <div class="project-header-content">
                             <h4> CH340G USB to UART převodník  </h4>
-                            <p class="project-short"> Vlastní CH340G PROGRAMÁTOR  </p>
+                            <p class="project-short"> Vlastní USB–UART převodník a programátor </p>
                             <span class="project-status status-completed">Hotové</span>
                         </div>
                         <div class="expand-icon">▼</div>
@@ -115,22 +114,26 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5> Detailní popis:</h5>
-                                <p> CH340G USB to UART převodník pro debug či programování </p>
+                                <p> USB–UART převodník s čipem CH340G pro ladění a programování mikrokontrolérů. </p>
                             </div>
 
                              <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li> User friendly </li>
-                                    <li> Ochrany a univerzálnost </li>
+                                    <li>2vrstvá DPS, 18,9 × 53,3 mm</li>
+                                    <li>CH340G (SOIC-16), krystal 12 MHz</li>
+                                    <li>USB-C konektor s ESD ochranou (PRTR5V0U2X)</li>
+                                    <li>Stabilizátor 3,3 V (AMS1117-3.3)</li>
+                                    <li>Vývody na 7pinové liště, 3 indikační LED, testovací body</li>
+                                    <li>SMD součástky 0603</li>
                                 </ul>
                             </div>
                             
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
                                     <div class="tech-tags">
-                                    <a href="docs/ibom-CH340G.html" target="blank" class="project-link"> Komponent </a>
+                                    <a href="docs/ch340g/ibom-ch340g.html" target="blank" class="project-link"> Interaktivní BOM </a>
                                 </div>
                                     
                                 </div>
@@ -139,7 +142,7 @@
                             <div class="project-tech">
                                 <h5>  Dokumenty: </h5>
                                 <div class="tech-tags">
-                                    <a href="docs/schema-ch340g.pdf" target="blank" class="project-link">📖 Schéma </a>
+                                    <a href="docs/ch340g/schema-ch340g.pdf" target="blank" class="project-link">📖 Schéma </a>
                                 </div>
                             </div>
                           
@@ -147,11 +150,11 @@
                                 <h5>3D render v KiCad:</h5>
                                 <div class="render-gallery">
                                     <div class="render-item">
-                                        <img src="docs/Obrazek-ch340g-F.png" alt="Přední strana PCB">
+                                        <img src="docs/ch340g/ch340g-predni.png" alt="Přední strana PCB">
                                         <span class="render-caption">Přední strana</span>
                                     </div>
                                     <div class="render-item">
-                                        <img src="docs/Obrazek-ch340g-B.png" alt="Spodní strana PCB">
+                                        <img src="docs/ch340g/ch340g-spodni.png" alt="Spodní strana PCB">
                                         <span class="render-caption">Spodní strana</span>
                                     </div>
                                 </div>
@@ -169,7 +172,7 @@
                     <div class="project-header">
                         <div class="project-header-content">
                             <h4> Převodník na PT100/1000  </h4>
-                            <p class="project-short"> Modul pro meření PT100/1000 a převedení na RS458 </p>
+                            <p class="project-short"> Modul pro měření PT100/PT1000 s výstupem na RS485 </p>
                             <span class="project-status status-completed">Hotové</span>
                         </div>
                         <div class="expand-icon">▼</div>
@@ -178,22 +181,25 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5> Detailní popis:</h5>
-                                <p> Modul pro meření PT100/1000 a převedení na RS458 </p>
+                                <p> Modul pro měření teploty odporovým čidlem PT100/PT1000. Data zpracovává STM32 a posílá je po sběrnici RS485. </p>
                             </div>
 
                             <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li> User friendly </li>
-                                    <li> Ochrany a univerzálnost </li>
+                                    <li>4vrstvá DPS, 40,5 × 41,1 mm</li>
+                                    <li>Převodník RTD MAX31865, MCU STM32G030F6, RS485 transceiver MAX3485</li>
+                                    <li>Napájení přes spínaný regulátor TPS560430 a LDO 3,3 V (AP2127)</li>
+                                    <li>Ochrany: pojistka, TVS dioda na vstupu, ochrana RS485 linky (SM712)</li>
+                                    <li>4× šroubovací svorkovnice, 13 testovacích bodů</li>
                                 </ul>
                             </div>
                             
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
                                     <div class="tech-tags">
-                                    <a href="docs/ibom-PT100.html" target="blank" class="project-link"> Komponent </a>
+                                    <a href="docs/pt100/ibom-pt100.html" target="blank" class="project-link"> Interaktivní BOM </a>
                                 </div>
                                     
                                 </div>
@@ -202,7 +208,7 @@
                             <div class="project-tech">
                                 <h5>  Dokumenty: </h5>
                                 <div class="tech-tags">
-                                    <a href="docs/schema-PT100.pdf" target="blank" class="project-link">📖 Schéma </a>
+                                    <a href="docs/pt100/schema-pt100.pdf" target="blank" class="project-link">📖 Schéma </a>
                                 </div>
                             </div>
                           
@@ -210,11 +216,11 @@
                                 <h5>3D render v KiCad:</h5>
                                 <div class="render-gallery">
                                     <div class="render-item">
-                                        <img src="docs/Obrazek-PT100-F.png" alt="Přední strana PCB">
+                                        <img src="docs/pt100/pt100-predni.png" alt="Přední strana PCB">
                                         <span class="render-caption">Přední strana</span>
                                     </div>
                                     <div class="render-item">
-                                        <img src="docs/Obrazek-PT100-B.png" alt="Spodní strana PCB">
+                                        <img src="docs/pt100/pt100-spodni.png" alt="Spodní strana PCB">
                                         <span class="render-caption">Spodní strana</span>
                                     </div>
                                 </div>
@@ -231,8 +237,8 @@
               <div class="project expandable-project" onclick="toggleProject(this)">
                     <div class="project-header">
                         <div class="project-header-content">
-                            <h4>Vozítko na dalkové ovládání</h4>
-                            <p class="project-short"> Vozítko na dalkové ovládání gyroskopem přes ESP32-to-ESP32 komunikaci .</p>
+                            <h4>Vozítko na dálkové ovládání</h4>
+                            <p class="project-short"> Vozítko na dálkové ovládání gyroskopem přes ESP32-to-ESP32 komunikaci.</p>
                             <span class="project-status status-completed">Hotové</span>
                         </div>
                         <div class="expand-icon">▼</div>
@@ -241,27 +247,31 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5> Detailní popis:</h5>
-                                <p> Autíčko bude ovládáné přes ESP32-to-ESP32 komunikaci gyroskopem umístěným na ruce. Ten bude posílat data a autíčko podle náklonu pojede, STM32 bude hlídat přes sonické senzory (HC-SR04) bezpečnou vzdálenost autíčka od překážky. </p>
+                                <p> Autíčko se ovládá gyroskopem umístěným na ruce přes ESP32-to-ESP32 komunikaci. Gyroskop posílá data a autíčko jede podle náklonu ruky. STM32 přes ultrazvukové senzory (HC-SR04) hlídá bezpečnou vzdálenost od překážky. </p>
                             </div>
                             
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
-                                    <a href="docs/ibom-AuR.html" target="blank" class="project-link"> Komponent </a>
+                                    <a href="docs/vozitko/ibom-vozitko.html" target="blank" class="project-link"> Interaktivní BOM </a>
                                 </div>
                             </div>
                             
                             <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li> Ovládní na dálku přes gyroskop </li>
-                                    <li> Ochrana proti vybití + nabíjení Li-Ion článků </li>
+                                    <li>Ovládání na dálku přes gyroskop</li>
+                                    <li>2vrstvá DPS, 103,5 × 99 mm, 4× montážní otvor M3</li>
+                                    <li>ESP32-WROOM-32D (komunikace), STM32F030K6 (hlídání vzdálenosti)</li>
+                                    <li>Driver motorů TB6612FNG</li>
+                                    <li>Nabíjení 1 článku Li-Ion (TP5100) a ochrana proti vybití</li>
+                                    <li>JST-PH konektory pro senzory a periferie, 15 testovacích bodů</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
                                 <h5>  Dokumenty: </h5>
                                 <div class="tech-tags">
-                                    <a href="docs/SchemaVozitko.pdf" target="blank" class="project-link">📖 Schéma </a>
+                                    <a href="docs/vozitko/schema-vozitko.pdf" target="blank" class="project-link">📖 Schéma </a>
                                 </div>
                             </div>
                             
@@ -277,7 +287,7 @@
                     <div class="project-header">
                         <div class="project-header-content">
                             <h4> STM32 deska </h4>
-                            <p class="project-short"> Vlastní STM32 deska </p>
+                            <p class="project-short"> Vlastní vývojová deska se STM32F446RET6 </p>
                             <span class="project-status status-completed">Hotové</span>
                         </div>
                         <div class="expand-icon">▼</div>
@@ -286,28 +296,32 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5> Detailní popis:</h5>
-                                <p> Vlastní STM32 deska s mojí značkou </p>
+                                <p> Vlastní vývojová deska s mikrokontrolérem STM32F446RET6 a mým logem. </p>
                             </div>
 
                             <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li> Programovatelný přes bootloader (DFU) </li>
-                                    <li> User friendly </li>
+                                    <li>Programovatelná přes USB DFU bootloader</li>
+                                    <li>2vrstvá DPS, 39 × 68,4 mm</li>
+                                    <li>USB-C s ESD ochranou (DESD5VE1BL), USB–UART převodník FT230XQ</li>
+                                    <li>Krystaly 16 MHz a 32,768 kHz (RTC)</li>
+                                    <li>Stabilizátory 5 V a 3,3 V (AMS1117)</li>
+                                    <li>2× 26pinová lišta, 5 LED, 7 testovacích bodů, SMD 0603 a 0201</li>
                                 </ul>
                             </div>
                             
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
-                                    <a href="docs/ibom-stm32f446.html" target="blank" class="project-link"> Komponent </a>
+                                    <a href="docs/stm32/ibom-stm32.html" target="blank" class="project-link"> Interaktivní BOM </a>
                                 </div>
                             </div>
                         
                             <div class="project-tech">
                                 <h5>  Dokumenty: </h5>
                                 <div class="tech-tags">
-                                    <a href="docs/SchémaSTM32.pdf" target="blank" class="project-link">📖 Schéma </a>
+                                    <a href="docs/stm32/schema-stm32.pdf" target="blank" class="project-link">📖 Schéma </a>
                                 </div>
                             </div>
                         </div>
@@ -339,9 +353,9 @@
                             </div>
         
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
-                                    <a href="docs/X.pdf" target="blank" class="project-link"> Jestě nedostupné </a>
+                                    <a href="docs/X.pdf" target="blank" class="project-link"> Ještě nedostupné </a>
                                 </div>
                             </div>
                             
@@ -352,14 +366,14 @@
                                     <li> Možnost nabíjení přes USB-C </li>
                                     <li> Vyměnitelný akumulátor v batohu </li>
                                     <li> Roztomilý obličej </li>
-                                    <li> Ukazatel vlhkosti, teploty, *CO2* </li>
+                                    <li> Ukazatel vlhkosti, teploty a CO₂ </li>
                                 </ul>
                             </div>
                             
                             <div class="project-tech">
                                 <h5>  Dokumenty: </h5>
                                 <div class="tech-tags">
-                                    <a href="docs/X.pdf" target="blank" class="project-link"> Jestě nedostupné </a>
+                                    <a href="docs/X.pdf" target="blank" class="project-link"> Ještě nedostupné </a>
                                 </div>
                             </div>
                         </div>
@@ -387,9 +401,9 @@
                             </div>
         
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
-                                    <a href="docs/MiniVozitko_schema.pdf" target="blank" class="project-link"> Použité Komponent </a>
+                                    <a href="docs/rcmini/schema-rcmini.pdf" target="blank" class="project-link"> Schéma </a>
                                 </div>
                             </div>
                             
@@ -405,7 +419,7 @@
                             <div class="project-tech">
                                 <h5>  Dokumenty: </h5>
                                 <div class="tech-tags">
-                                    <a href="docs/MiniVozitko_schema.pdf" target="blank" class="project-link">📖 Schéma </a>
+                                    <a href="docs/rcmini/schema-rcmini.pdf" target="blank" class="project-link">📖 Schéma </a>
                                 </div>
                             </div>
                         </div>
@@ -420,7 +434,7 @@
                     <div class="project-header">
                         <div class="project-header-content">
                             <h4>SmartHome</h4>
-                            <p class="project-short"> Chytrá domácnost ovládaná přes ESPHOME </p>
+                            <p class="project-short"> Chytrá domácnost ovládaná přes ESPHome </p>
                            <span class="project-status status-planned "> Plánované </span>
                         </div>
                         <div class="expand-icon">▼</div>
@@ -429,11 +443,11 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5> Detailní popis:</h5>
-                                <p> Udělám si vlastní univerzální PCB. Budu přes algoritmus ovládat svojí domácnost, kterou budu moc změnit a přizpůsobovat ji mým zvykům a rutinám. </p>
+                                <p> Vlastní univerzální DPS, přes kterou budu ovládat domácnost a přizpůsobovat ji svým zvykům a rutinám. </p>
                             </div>
         
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
                                     <span class="tech-tag">ESP32-WROOM-32D-16</span>
                                     <span class="tech-tag">AMS1117-3.3</span>
@@ -446,8 +460,8 @@
                             <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li>Malé do kapsy</li>
-                                
+                                    <li>Vlastní univerzální DPS</li>
+                                    <li>Ovládání přes ESPHome</li>
                                 </ul>
                             </div>
                             
@@ -483,7 +497,7 @@
                             </div>
                             
                             <div class="project-tech">
-                                <h5> Použité Komponent:</h5>
+                                <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
                                     <span class="tech-tag">ESP32-WROOM-32D-16</span>
                                 </div>
@@ -492,8 +506,7 @@
                             <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li> Programovatelný přes bootloader (UART) </li>
-                                    <li> User friendly </li>
+                                    <li> Programovatelná přes bootloader (UART) </li>
                                     <li> Ochrany a univerzálnost </li>
                                 </ul>
                             </div>
@@ -515,16 +528,16 @@
             <!-- -------------------------------------------------------------------------------------------------------- -->
             
             <section class="mt-2 text-center">
-                <h2 class="section-title"> Máte nápad na spolupráci? </h2>
-                <p> Pokud máte zajímavý projekt nebo nápad, dejte vědět </p>
+                <h2 class="section-title"> Máš nápad na spolupráci? </h2>
+                <p> Pokud máš zajímavý projekt nebo nápad, dej vědět. </p>
                 <br>
-                <a href="kontakt.html" class="cta-button"> Napište mi </a>
+                <a href="kontakt.html" class="cta-button"> Napiš mi </a>
             </section>
         </div>
     </main>
     <footer>
         <div class="container">
-            <p> 2026 VizMor </p>
+            <p>&copy; 2026 VizMor</p>
         </div>
     </footer>
     <script src="script.js"></script>
