@@ -197,6 +197,13 @@ function showNotification(message, type = 'info', duration = 4000) {
 }
 
 /* ===== Zvětšení obrázků (lightbox) ===== */
+const LB_ICONS = {
+    close: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    prev:  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+    next:  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>'
+};
+const LB_ZOOM = 2.5;
+
 function initLightbox() {
     const images = document.querySelectorAll('.render-item img');
     if (!images.length) return;
@@ -206,13 +213,13 @@ function initLightbox() {
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-modal', 'true');
     box.innerHTML = `
-        <button type="button" class="lightbox-close" aria-label="Zavřít">&times;</button>
-        <button type="button" class="lightbox-prev" aria-label="Předchozí">&#8249;</button>
+        <button type="button" class="lightbox-close" aria-label="Zavřít">${LB_ICONS.close}</button>
+        <button type="button" class="lightbox-prev" aria-label="Předchozí">${LB_ICONS.prev}</button>
         <figure class="lightbox-figure">
-            <img class="lightbox-img" alt="">
+            <div class="lightbox-stage"><img class="lightbox-img" alt="" draggable="false"></div>
             <figcaption class="lightbox-caption"></figcaption>
         </figure>
-        <button type="button" class="lightbox-next" aria-label="Další">&#8250;</button>`;
+        <button type="button" class="lightbox-next" aria-label="Další">${LB_ICONS.next}</button>`;
     document.body.appendChild(box);
 
     const img = box.querySelector('.lightbox-img');
@@ -220,9 +227,66 @@ function initLightbox() {
     let group = [];
     let index = 0;
 
+    /* --- přiblížení a posun --- */
+    let scale = 1, tx = 0, ty = 0;
+    let drag = null; // {x, y, tx, ty, moved}
+
+    const clamp = () => {
+        const maxX = (scale - 1) * img.offsetWidth / 2;
+        const maxY = (scale - 1) * img.offsetHeight / 2;
+        tx = Math.max(-maxX, Math.min(maxX, tx));
+        ty = Math.max(-maxY, Math.min(maxY, ty));
+    };
+    const apply = () => {
+        img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+        box.classList.toggle('zoomed', scale > 1);
+    };
+    const resetZoom = () => { scale = 1; tx = 0; ty = 0; apply(); };
+    const zoomAt = (clientX, clientY) => {
+        const r = img.getBoundingClientRect();
+        // vzdálenost bodu kliknutí od středu obrázku (v nepřiblíženém stavu)
+        const dx = clientX - (r.left + r.width / 2);
+        const dy = clientY - (r.top + r.height / 2);
+        scale = LB_ZOOM;
+        tx = -(scale - 1) * dx;
+        ty = -(scale - 1) * dy;
+        clamp();
+        apply();
+    };
+
+    img.addEventListener('pointerdown', e => {
+        drag = { x: e.clientX, y: e.clientY, tx, ty, moved: false };
+        img.setPointerCapture(e.pointerId);
+    });
+    img.addEventListener('pointermove', e => {
+        if (!drag) return;
+        const mx = e.clientX - drag.x, my = e.clientY - drag.y;
+        if (Math.abs(mx) + Math.abs(my) > 5) drag.moved = true;
+        if (scale > 1 && drag.moved) {
+            tx = drag.tx + mx;
+            ty = drag.ty + my;
+            clamp();
+            apply();
+            box.classList.add('dragging');
+        }
+    });
+    img.addEventListener('pointerup', e => {
+        if (!drag) return;
+        const wasClick = !drag.moved;
+        drag = null;
+        box.classList.remove('dragging');
+        if (wasClick) {
+            if (scale > 1) resetZoom();
+            else zoomAt(e.clientX, e.clientY);
+        }
+    });
+    img.addEventListener('pointercancel', () => { drag = null; box.classList.remove('dragging'); });
+
+    /* --- otevírání, přepínání, zavírání --- */
     const show = i => {
         index = (i + group.length) % group.length;
         const src = group[index];
+        resetZoom();
         img.src = src.src;
         img.alt = src.alt;
         const cap = src.closest('.render-item')?.querySelector('.render-caption');
@@ -237,6 +301,7 @@ function initLightbox() {
         document.body.style.overflow = 'hidden';
     };
     const close = () => {
+        resetZoom();
         box.classList.remove('open');
         document.body.style.overflow = '';
     };
@@ -253,7 +318,7 @@ function initLightbox() {
     });
 
     box.addEventListener('click', e => {
-        if (e.target === box || e.target.classList.contains('lightbox-close')) close();
+        if (e.target === box || e.target.closest('.lightbox-close')) close();
     });
     box.querySelector('.lightbox-prev').addEventListener('click', () => show(index - 1));
     box.querySelector('.lightbox-next').addEventListener('click', () => show(index + 1));
