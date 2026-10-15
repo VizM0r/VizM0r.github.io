@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', throttle(handleScroll, 50));
 });
 
-/* ===== Kliknutí na e-mail: zkopíruje adresu a otevře poštovní program ===== */
+/* ===== Kliknutí na kontakt (e-mail, Discord): zkopíruje text odkazu a otevře ho ===== */
 function copyToClipboard(text) {
     if (navigator.clipboard && window.isSecureContext) {
         return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
@@ -246,15 +246,15 @@ function legacyCopy(text) {
     return ok ? Promise.resolve() : Promise.reject();
 }
 
-function copyEmail(link) {
-    const email = link.textContent.trim();
+function copyLinkText(link) {
+    const text = link.textContent.trim();
     const note = link.closest('p')?.querySelector('.copied-note');
-    copyToClipboard(email).then(() => {
+    copyToClipboard(text).then(() => {
         if (!note) return;
         note.textContent = '✓ Zkopírováno';
         note.classList.add('visible');
         clearTimeout(note._timer);
         note._timer = setTimeout(() => note.classList.remove('visible'), 2000);
     }).catch(() => {});
-    // Výchozí akce odkazu (mailto:) pokračuje – otevře poštovní program, pokud je nastavený.
+    // Výchozí akce odkazu pokračuje – otevře poštovní program nebo profil.
 }
