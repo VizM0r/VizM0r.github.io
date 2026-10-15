@@ -85,18 +85,6 @@ main {
     padding: 2rem 0;
 }
 
-.section {
-    margin-bottom: 4rem;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Hero Section */
 .hero {
     text-align: center;
@@ -381,22 +369,6 @@ main {
     justify-content: center;
 }
 
-.schema-placeholder p {
-    color: #4afe6b;
-    font-style: italic;
-    opacity: 0.7;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(74, 254, 107, 0.2);
-}
-
-
 .project-link {
     background: linear-gradient(135deg, #4caf50 0%, #4caf50 100%);
     color: black;
@@ -414,50 +386,6 @@ main {
 .project-link:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(74, 254, 107, 0.4);
-}
-
-.github-link {
-    background: linear-gradient(135deg, #333 0%, #555 100%);
-}
-
-.github-link:hover {
-    box-shadow: 0 5px 15px rgba(51, 51, 51, 0.4);
-}
-
-.demo-link {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-}
-
-.demo-link:hover {
-    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
-}
-
-.project-timeline ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.project-timeline li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    border-left: 2px solid rgba(74, 254, 107, 0.3);
-    margin-left: 0.5rem;
-}
-
-.project-timeline li::before {
-    content: '●';
-    position: absolute;
-    left: -6px;
-    color: #4afe6b;
-    background: #0f1a0f;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8px;
 }
 
 /* Stránky pro obsah */
@@ -497,29 +425,6 @@ main {
     margin-bottom: 1rem;
 }
 
-.difficulty {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 0.7rem;
-    margin-top: 0.5rem;
-}
-
-.difficulty-easy {
-    background: rgba(0, 255, 127, 0.2);
-    color: #00ff7f;
-}
-
-.difficulty-medium {
-    background: rgba(255, 193, 7, 0.2);
-    color: #ffc107;
-}
-
-.difficulty-hard {
-    background: rgba(220, 53, 69, 0.2);
-    color: #dc3545;
-}
-
 /* Sekce pro 3D rendery z KiCadu */
 .project-renders {
     margin-top: 1.5rem;
@@ -550,7 +455,6 @@ main {
     gap: 10px;
 }
 
-
 .render-item:hover {
     border-color: #4afe6b; /* Při najetí myší se rámeček rozsvítí */
 }
@@ -572,12 +476,6 @@ main {
     color: #a0bda0;
     margin-top: 6px;
     font-style: italic;
-}
-
-
-/* Formuláře */
-.form-group {
-    margin-bottom: 1.5rem;
 }
 
 /* Odkazy v kartách a potvrzení zkopírování e-mailu */
