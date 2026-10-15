@@ -579,3 +579,30 @@ main {
 .form-group {
     margin-bottom: 1.5rem;
 }
+
+/* Odkazy v kartách a tlačítko pro kopírování */
+.card a {
+    color: #4afe6b;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.copy-btn {
+    margin-top: 0.25rem;
+    padding: 6px 14px;
+    font: inherit;
+    font-size: 0.9rem;
+    color: #e0ede0;
+    background: rgba(74, 254, 107, 0.1);
+    border: 1px solid rgba(74, 254, 107, 0.4);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(74, 254, 107, 0.2);
+}
