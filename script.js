@@ -218,3 +218,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Test: Zkontrolovat, jestli je toggleProject dostupná globálně
     console.log('toggleProject function available:', typeof window.toggleProject);
 });
+
+/* ===== Kopírování textu (např. e-mailu) do schránky ===== */
+function copyText(button, text) {
+    const original = button.textContent;
+    const done = () => {
+        button.textContent = '✓ Zkopírováno';
+        setTimeout(() => { button.textContent = original; }, 2000);
+    };
+    const fallback = () => {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        try { document.execCommand('copy'); done(); } catch (e) { window.prompt('Zkopíruj e-mail:', text); }
+        document.body.removeChild(area);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+        fallback();
+    }
+}
