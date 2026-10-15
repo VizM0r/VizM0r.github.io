@@ -196,6 +196,75 @@ function showNotification(message, type = 'info', duration = 4000) {
     }, duration);
 }
 
+/* ===== Zvětšení obrázků (lightbox) ===== */
+function initLightbox() {
+    const images = document.querySelectorAll('.render-item img');
+    if (!images.length) return;
+
+    const box = document.createElement('div');
+    box.className = 'lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.innerHTML = `
+        <button type="button" class="lightbox-close" aria-label="Zavřít">&times;</button>
+        <button type="button" class="lightbox-prev" aria-label="Předchozí">&#8249;</button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" alt="">
+            <figcaption class="lightbox-caption"></figcaption>
+        </figure>
+        <button type="button" class="lightbox-next" aria-label="Další">&#8250;</button>`;
+    document.body.appendChild(box);
+
+    const img = box.querySelector('.lightbox-img');
+    const caption = box.querySelector('.lightbox-caption');
+    let group = [];
+    let index = 0;
+
+    const show = i => {
+        index = (i + group.length) % group.length;
+        const src = group[index];
+        img.src = src.src;
+        img.alt = src.alt;
+        const cap = src.closest('.render-item')?.querySelector('.render-caption');
+        caption.textContent = cap ? cap.textContent : src.alt;
+        box.classList.toggle('single', group.length < 2);
+    };
+    const open = clicked => {
+        const gallery = clicked.closest('.render-gallery');
+        group = gallery ? Array.from(gallery.querySelectorAll('img')) : [clicked];
+        show(group.indexOf(clicked));
+        box.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+        box.classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    images.forEach(el => {
+        el.setAttribute('tabindex', '0');
+        el.addEventListener('click', e => {
+            e.stopPropagation(); // nezavírat rozkliknutý projekt
+            open(el);
+        });
+        el.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); open(el); }
+        });
+    });
+
+    box.addEventListener('click', e => {
+        if (e.target === box || e.target.classList.contains('lightbox-close')) close();
+    });
+    box.querySelector('.lightbox-prev').addEventListener('click', () => show(index - 1));
+    box.querySelector('.lightbox-next').addEventListener('click', () => show(index + 1));
+    document.addEventListener('keydown', e => {
+        if (!box.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(index - 1);
+        if (e.key === 'ArrowRight') show(index + 1);
+    });
+}
+
 /* ===== Init ===== */
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing...'); // Debug
@@ -204,6 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleContactForm();
     handleProjectLinks();
     handleProjectKeyboard();
+    initLightbox();
 
     document.querySelector('.mobile-menu-btn')
         ?.addEventListener('click', toggleMenu);
