@@ -635,12 +635,31 @@ main {
     gap: 0.75rem;
 }
 
-.lightbox-img {
-    max-width: 100%;
-    max-height: calc(90vh - 3rem);
-    object-fit: contain;
+.lightbox-stage {
+    overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    line-height: 0;
+}
+
+.lightbox-img {
+    max-width: min(90vw, 1000px);
+    max-height: calc(90vh - 3rem);
+    object-fit: contain;
+    cursor: zoom-in;
+    transform-origin: center center;
+    transition: transform 0.25s ease;
+    user-select: none;
+    touch-action: none;
+}
+
+.lightbox.zoomed .lightbox-img {
+    cursor: grab;
+}
+
+.lightbox.dragging .lightbox-img {
+    cursor: grabbing;
+    transition: none;
 }
 
 .lightbox-caption {
@@ -649,17 +668,29 @@ main {
 }
 
 .lightbox button {
-    background: rgba(74, 254, 107, 0.1);
-    border: 1px solid rgba(74, 254, 107, 0.4);
-    color: #4afe6b;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     width: 48px;
     height: 48px;
-    font-size: 2rem;
-    line-height: 1;
-    cursor: pointer;
     flex-shrink: 0;
+    background: rgba(74, 254, 107, 0.1);
+    border: 1px solid rgba(74, 254, 107, 0.4);
+    border-radius: 50%;
+    color: #4afe6b;
+    cursor: pointer;
     transition: background 0.3s ease;
+}
+
+.lightbox button svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .lightbox button:hover {
@@ -686,6 +717,10 @@ main {
     .lightbox button {
         width: 40px;
         height: 40px;
-        font-size: 1.6rem;
+    }
+
+    .lightbox button svg {
+        width: 20px;
+        height: 20px;
     }
 }
