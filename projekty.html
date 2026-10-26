@@ -101,6 +101,73 @@
           
                 <h2 class="section-title">Dokončené projekty</h2>
 
+            <section class="mt-2">
+                <div class="project expandable-project" onclick="toggleProject(this)">
+                    <div class="project-header">
+                        <div class="project-header-content">
+                            <h4> Univerzální USB-UART / UPDI převodník s CP2102N  </h4>
+                            <p class="project-short"> Převodník a programátor pro AVR (UPDI), ESP32 i ATmega </p>
+                            <span class="project-status status-completed">Hotové</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-details">
+                            <div class="project-description">
+                                <h5> Detailní popis:</h5>
+                                <p> Univerzální USB-UART převodník s čipem CP2102N. Umí programovat AVR přes UPDI (SerialUPDI), ESP32 s automatickým BOOT/RESET i ATmega s Arduino bootloaderem. Díky převodníkům úrovní funguje s cílovými deskami na 3,3 V i 5 V a umí je i napájet. </p>
+                            </div>
+
+                             <div class="project-features">
+                                <h5> Funkce:</h5>
+                                <ul>
+                                    <li>CP2102N (QFN-24), logika 3,3 V</li>
+                                    <li>USB-C konektor s ESD ochranou (TPD2E2U06), vratná pojistka 500 mA</li>
+                                    <li>Převodníky úrovní SN74LVC1T45 na RX i TX – napěťová úroveň podle cílové desky</li>
+                                    <li>Napájení cílové desky 3,3 V (LDO TLV75533) nebo 5 V, volba jumperem</li>
+                                    <li>Režim UPDI (TX přes 1 kΩ) nebo UART, volba jumperem</li>
+                                    <li>Automatický BOOT/RESET přes DTR/RTS (BC817) pro ESP32</li>
+                                    <li>AVR_RST přes kondenzátor pro Arduino bootloader (ATmega)</li>
+                                    <li>8pinová lišta: V_T, BOOT, RST, A_RST, TX, UPDI, RX, GND</li>
+                                    <li>Indikační LED TX/RX, SMD součástky 0603</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech">
+                                <h5> Použité komponenty:</h5>
+                                <div class="tech-tags">
+                                    <a href="docs/cp2102n/ibom-cp2102n.html" target="_blank" rel="noopener" class="project-link"> Interaktivní BOM </a>
+                                </div>
+                            </div>
+
+                            <div class="project-tech">
+                                <h5>  Dokumenty: </h5>
+                                <div class="tech-tags">
+                                    <a href="docs/cp2102n/schema-cp2102n.pdf" target="_blank" rel="noopener" class="project-link">📖 Schéma </a>
+                                </div>
+                            </div>
+
+                            <div class="project-renders">
+                                <h5>3D render v KiCad:</h5>
+                                <div class="render-gallery">
+                                    <div class="render-item">
+                                        <img src="docs/cp2102n/cp2102n-predni.png" alt="Přední strana PCB">
+                                        <span class="render-caption">Přední strana</span>
+                                    </div>
+                                    <div class="render-item">
+                                        <img src="docs/cp2102n/cp2102n-spodni.png" alt="Spodní strana PCB">
+                                        <span class="render-caption">Spodní strana</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+             <!-- ***************************************************************************************************** -->
+
             <section class="mt-2">   
                 <div class="project expandable-project" onclick="toggleProject(this)">
                     <div class="project-header">
