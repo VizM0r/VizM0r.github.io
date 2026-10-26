@@ -87,7 +87,8 @@ const LB_ICONS = {
     prev:  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
     next:  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>'
 };
-const LB_ZOOM = 2.5;
+const LB_ZOOM_MIN = 1.5; // nejmenší přiblížení, aby kliknutí vždy něco udělalo
+const LB_ZOOM_MAX = 4;   // strop pro hodně velké fotky
 
 function initLightbox() {
     const images = document.querySelectorAll('.render-item img');
@@ -140,7 +141,10 @@ function initLightbox() {
         // vzdálenost bodu kliknutí od středu obrázku (v nepřiblíženém stavu)
         const dx = clientX - (r.left + r.width / 2);
         const dy = clientY - (r.top + r.height / 2);
-        scale = LB_ZOOM;
+        // přiblížit na skutečné rozlišení fotky (1 pixel souboru = 1 pixel obrazovky),
+        // ať se obrázek zbytečně nenafukuje a nerozmazává
+        const native = img.naturalWidth / img.offsetWidth / (window.devicePixelRatio || 1);
+        scale = Math.min(LB_ZOOM_MAX, Math.max(LB_ZOOM_MIN, native));
         tx = -(scale - 1) * dx;
         ty = -(scale - 1) * dy;
         clamp();
