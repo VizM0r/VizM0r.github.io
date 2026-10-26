@@ -37,16 +37,17 @@
             <h1>Moje projekty</h1>
             <p class="text-center mb-2">Tady najdeš přehled všech mých elektrotechnických projektů - od jednoduchých obvodů po komplexní systémy.</p>
             
-             <!-- //-----------------------------------------Aktivní--------------------------------------//  -->
-                <h2 class="section-title">Aktivní projekty</h2>
+            <!-- //-------------------------------------------Dokončené---------------------------------------------------//  -->
+          
+                <h2 class="section-title">Dokončené projekty</h2>
 
             <section class="mt-2">   
                 <div class="project expandable-project" onclick="toggleProject(this)">
                     <div class="project-header">
                         <div class="project-header-content">
-                            <h4>  Tester součástek  </h4>
-                            <p class="project-short"> Vlastní Tester součástek  </p>
-                            <span class="project-status status-active"> V procesu </span>
+                            <h4> Tester součástek  </h4>
+                            <p class="project-short"> Vlastní bateriový tester součástek s displejem </p>
+                            <span class="project-status status-completed">Hotové</span>
                         </div>
                         <div class="expand-icon">▼</div>
                     </div>
@@ -54,26 +55,27 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <h5> Detailní popis:</h5>
-                                <p> Chytrý tester součástek, který po přiložení součástky algoritmem zjistí její typ a stav. </p>
+                                <p> Chytrý tester součástek, který po vložení součástky do ZIF patice algoritmem zjistí její typ, hodnoty a stav a zobrazí je na displeji. </p>
                             </div>
 
                              <div class="project-features">
                                 <h5> Funkce:</h5>
                                 <ul>
-                                    <li> Rozpoznávání součástek </li>
-                                    <li> Rozpoznávání stavu a hodnot </li>
-                                    <li> MCU AVR64DB32, programování přes UPDI </li>
-                                    <li> ZIF patice pro testovanou součástku, 3 měřicí body přes přesné rezistory 680 Ω / 470 kΩ (0,1 %) </li>
-                                    <li> SPI displej </li>
+                                    <li> Rozpoznávání součástek, jejich stavu a hodnot </li>
+                                    <li> MCU AVR64DB32, programování přes UPDI, ladicí konektor UPDI + UART </li>
+                                    <li> ZIF patice, 3 měřicí body přes přesné rezistory 680 Ω / 470 kΩ (0,1 %) </li>
+                                    <li> SPI displej s řízeným podsvícením (P-MOSFET) </li>
                                     <li> Napájení z Li-Ion článku s nabíjením přes USB-C (BQ24075), měnič na 5 V (TPS63002) a LDO 3,3 V (MCP1700) </li>
+                                    <li> TVS ochrana na USB-C, indikace nabíjení a napájení LED </li>
                                     <li> Měření napětí baterie </li>
+                                    <li> Testovací body na všech důležitých signálech </li>
                                 </ul>
                             </div>
                             
                             <div class="project-tech">
                                 <h5> Použité komponenty:</h5>
                                 <div class="tech-tags">
-                                    <span class="tech-tag">Připravuje se</span>
+                                    <a href="docs/tester/ibom-tester.html" target="_blank" rel="noopener" class="project-link"> Interaktivní BOM </a>
                                 </div>
                             </div>
 
@@ -86,8 +88,15 @@
                           
                             <div class="project-renders">
                                 <h5>3D render v KiCad:</h5>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Připravuje se</span>
+                                <div class="render-gallery">
+                                    <div class="render-item">
+                                        <img src="docs/tester/tester-predni.png" alt="Přední strana PCB">
+                                        <span class="render-caption">Přední strana</span>
+                                    </div>
+                                    <div class="render-item">
+                                        <img src="docs/tester/tester-spodni.png" alt="Spodní strana PCB">
+                                        <span class="render-caption">Spodní strana</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -95,11 +104,8 @@
                     </div>
                 </div>  
              </section>
-              
 
-            <!-- //-------------------------------------------Dokončené---------------------------------------------------//  -->
-          
-                <h2 class="section-title">Dokončené projekty</h2>
+             <!-- ***************************************************************************************************** -->
 
             <section class="mt-2">
                 <div class="project expandable-project" onclick="toggleProject(this)">
