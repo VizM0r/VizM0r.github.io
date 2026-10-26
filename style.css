@@ -561,8 +561,10 @@ main {
     box-shadow: none;
 }
 
-.lightbox.zoomed .lightbox-caption {
-    visibility: hidden;
+.lightbox.zoomed .lightbox-caption,
+.lightbox.zoomed .lightbox-prev,
+.lightbox.zoomed .lightbox-next {
+    visibility: hidden; /* při přiblížení nic nepřekrývá fotku, zůstává jen křížek */
 }
 
 .lightbox.dragging .lightbox-img {
