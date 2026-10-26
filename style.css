@@ -518,6 +518,7 @@ main {
     padding: 2rem;
     background: rgba(5, 12, 5, 0.92);
     backdrop-filter: blur(4px);
+    overflow: hidden; /* přiblížená fotka se ořízne až okrajem obrazovky */
 }
 
 .lightbox.open {
@@ -534,7 +535,8 @@ main {
 }
 
 .lightbox-stage {
-    overflow: hidden;
+    position: relative;
+    z-index: 1;
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     line-height: 0;
@@ -553,6 +555,14 @@ main {
 
 .lightbox.zoomed .lightbox-img {
     cursor: grab;
+}
+
+.lightbox.zoomed .lightbox-stage {
+    box-shadow: none;
+}
+
+.lightbox.zoomed .lightbox-caption {
+    visibility: hidden;
 }
 
 .lightbox.dragging .lightbox-img {
@@ -579,6 +589,13 @@ main {
     color: #4afe6b;
     cursor: pointer;
     transition: background 0.3s ease;
+    z-index: 2; /* tlačítka zůstávají nad přiblíženou fotkou */
+    backdrop-filter: blur(4px);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: relative;
 }
 
 .lightbox button svg {

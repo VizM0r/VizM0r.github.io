@@ -116,11 +116,19 @@ function initLightbox() {
     let scale = 1, tx = 0, ty = 0;
     let drag = null; // {x, y, tx, ty, moved}
 
+    // posun omezíme podle okna prohlížeče, ne podle rámečku obrázku:
+    // přiblížená fotka může vyplnit celou obrazovku a jde s ní dojet až k okrajům
+    const clampAxis = (t, center, size, view) => {
+        const half = size * scale / 2;
+        if (half * 2 <= view) return view / 2 - center;      // menší než okno → na střed
+        return Math.max(view - half - center, Math.min(half - center, t));
+    };
     const clamp = () => {
-        const maxX = (scale - 1) * img.offsetWidth / 2;
-        const maxY = (scale - 1) * img.offsetHeight / 2;
-        tx = Math.max(-maxX, Math.min(maxX, tx));
-        ty = Math.max(-maxY, Math.min(maxY, ty));
+        const r = img.parentElement.getBoundingClientRect(); // rámeček = obrázek bez zoomu a posunu
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        tx = clampAxis(tx, cx, img.offsetWidth, window.innerWidth);
+        ty = clampAxis(ty, cy, img.offsetHeight, window.innerHeight);
     };
     const apply = () => {
         img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
