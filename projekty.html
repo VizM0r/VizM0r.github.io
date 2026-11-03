@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Přehled elektronických projektů: USB–UART převodník, převodník PT100 na RS485, STM32 deska, vozítko na dálkové ovládání a další. Schémata, interaktivní BOM a 3D rendery.">
+    <meta name="description" content="Přehled elektronických projektů: LoRa deska Football stick, USB–UART převodník, převodník PT100 na RS485, STM32 deska, vozítko na dálkové ovládání a další. Schémata, interaktivní BOM a 3D rendery.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Projekty – VizMor">
-    <meta property="og:description" content="Přehled elektronických projektů: USB–UART převodník, převodník PT100 na RS485, STM32 deska, vozítko na dálkové ovládání a další. Schémata, interaktivní BOM a 3D rendery.">
+    <meta property="og:description" content="Přehled elektronických projektů: LoRa deska Football stick, USB–UART převodník, převodník PT100 na RS485, STM32 deska, vozítko na dálkové ovládání a další. Schémata, interaktivní BOM a 3D rendery.">
     <meta property="og:url" content="https://vizm0r.github.io/projekty.html">
     <meta property="og:image" content="https://vizm0r.github.io/docs/logo.png">
     <title>Projekty - VizMor</title>
@@ -41,7 +41,73 @@
           
                 <h2 class="section-title">Dokončené projekty</h2>
 
-            <section class="mt-2">   
+            <section class="mt-2">
+                <div class="project expandable-project" onclick="toggleProject(this)">
+                    <div class="project-header">
+                        <div class="project-header-content">
+                            <h4> Football stick – LoRa deska s RAK3172  </h4>
+                            <p class="project-short"> Malá bateriová deska s LoRa modulem, vibračním motorem a tlačítkem </p>
+                            <span class="project-status status-completed">Hotové</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-details">
+                            <div class="project-description">
+                                <h5> Detailní popis:</h5>
+                                <p> Kompaktní 4vrstvá deska 18 × 48 mm s LoRa modulem RAK3172 (STM32WLE5). Běží z výměnného lithiového článku ER14505, ovládá vibrační motor, čte tlačítko a hlídá napětí baterie. Programuje se přes UART v Arduino IDE (RUI3). Desky osazuje JLCPCB. </p>
+                            </div>
+
+                             <div class="project-features">
+                                <h5> Funkce:</h5>
+                                <ul>
+                                    <li> LoRa modul RAK3172 (EU868, TCXO) s IPEX konektorem pro externí anténu </li>
+                                    <li> Napájení z článku ER14505 (3,6 V), ochrana proti přepólování ideální diodou LM66100 </li>
+                                    <li> Step-down měnič TPS62842 na 3,3 V s velmi nízkou klidovou spotřebou </li>
+                                    <li> Spínání vibračního motoru N-MOSFETem AO3400A s ochrannou diodou, motor napájený za ochranou proti přepólování </li>
+                                    <li> Měření napětí baterie přes dělič do ADC </li>
+                                    <li> Tlačítko s ESD ochranou a RC filtrem na pinu s probuzením (PA0) </li>
+                                    <li> 12pinový konektor JST SH: napájení, I²C, UART, reset, tlačítko a motor </li>
+                                    <li> Stavová LED, testovací body na všech signálech včetně SWD </li>
+                                </ul>
+                            </div>
+
+                            <div class="project-tech">
+                                <h5> Použité komponenty:</h5>
+                                <div class="tech-tags">
+                                    <a href="docs/fotbal/ibom-fotbal.html" target="_blank" rel="noopener" class="project-link"> Interaktivní BOM </a>
+                                </div>
+                            </div>
+
+                            <div class="project-tech">
+                                <h5>  Dokumenty: </h5>
+                                <div class="tech-tags">
+                                    <a href="docs/fotbal/schema-fotbal.pdf" target="_blank" rel="noopener" class="project-link">📖 Schéma </a>
+                                </div>
+                            </div>
+
+                            <div class="project-renders">
+                                <h5>3D render v KiCad:</h5>
+                                <div class="render-gallery">
+                                    <div class="render-item">
+                                        <img src="docs/fotbal/fotbal-predni.png" alt="Přední strana PCB">
+                                        <span class="render-caption">Přední strana</span>
+                                    </div>
+                                    <div class="render-item">
+                                        <img src="docs/fotbal/fotbal-spodni.png" alt="Spodní strana PCB">
+                                        <span class="render-caption">Spodní strana</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+             <!-- ***************************************************************************************************** -->
+
+            <section class="mt-2">
                 <div class="project expandable-project" onclick="toggleProject(this)">
                     <div class="project-header">
                         <div class="project-header-content">
