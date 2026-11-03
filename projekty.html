@@ -196,11 +196,11 @@
                                     <li>CP2102N (QFN-24), logika 3,3 V</li>
                                     <li>USB-C konektor s ESD ochranou (TPD2E2U06), vratná pojistka 500 mA</li>
                                     <li>Převodníky úrovní SN74LVC1T45 na RX i TX – napěťová úroveň podle cílové desky</li>
-                                    <li>Napájení cílové desky 3,3 V (LDO TLV75533) nebo 5 V, volba jumperem</li>
+                                    <li>Napájení cílové desky 3,3 V (LDO TLV75533) nebo 5 V, volba jumperem – jumper nasazuj jen tehdy, když cílovou desku napájí převodník (jinak se propojí dva zdroje)</li>
                                     <li>Režim UPDI (TX přes 1 kΩ) nebo UART, volba jumperem</li>
                                     <li>Automatický BOOT/RESET přes DTR/RTS (BC817) pro ESP32</li>
                                     <li>AVR_RST přes kondenzátor pro Arduino bootloader (ATmega)</li>
-                                    <li>8pinová lišta: V_T, BOOT, RST, A_RST, TX, UPDI, RX, GND</li>
+                                    <li>8pinová lišta: V_T, A_RST, BOOT, RST, TX, UPDI, RX, GND</li>
                                     <li>Indikační LED TX/RX, SMD součástky 0603</li>
                                 </ul>
                             </div>
